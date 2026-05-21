@@ -1,0 +1,180 @@
+/* =========================================================
+   Choir Mate — Colors & Type
+   Mirrors src/renderer/src/tokens.css from the codebase,
+   with added semantic role variables for prose.
+   ========================================================= */
+
+:root {
+  /* ── Brand color palette ─────────────────────────────── */
+  --color-primary:        #2C5242;  /* forest green — the brand voice */
+  --color-primary-dark:   #1C3228;  /* deepest forest — header bar, hover */
+  --color-primary-light:  #5A8C78;  /* sage — dashed drop zones, hover ring */
+
+  --color-accent:         #C4722A;  /* terracotta — streaks, single CTA, never body text */
+  --color-accent-light:   #FDF3E8;  /* terracotta tint — drop-zone hover bg */
+
+  --color-success:        #2D6B45;  /* practice-mastered, onboarding check */
+  --color-danger:         #B83040;  /* destructive only */
+  --color-error:          #C0392B;  /* destructive icon stroke, error fg in chrome */
+
+  --color-warning-bg:     #FEF8EC;
+  --color-warning-border: #D4A830;
+  --color-error-bg:       #FEF0F0;
+  --color-error-border:   #D08080;
+
+  /* ── Overlays ───────────────────────────────────────── */
+  --color-overlay-routine: rgba(44, 82, 66, 0.88); /* TransitionMoment full-screen */
+
+  /* ── Surfaces ───────────────────────────────────────── */
+  --color-bg-default: #F6F4EF;     /* parchment — Home, Library (default mode) */
+  --color-bg-active:  #EDE9E0;     /* ivory — Song Detail, active Routine (work mode) */
+  --color-surface:    #FDFCFA;     /* cards, inputs */
+
+  /* ── Text ───────────────────────────────────────────── */
+  --color-text-primary:   #1C1814;
+  --color-text-secondary: #5A5650;
+  --color-text-muted:     #6A6258;  /* labels, captions, "no guide" badge */
+
+  /* ── Border ─────────────────────────────────────────── */
+  --color-border: #E2D8CC;
+
+  /* ── Song state tokens ──────────────────────────────── */
+  --state-song-no-guide:    #8A8580;  /* muted grey dot */
+  --state-song-ready:       #2C5242;  /* forest green dot */
+  --state-song-todo:        #8A8580;
+  --state-song-in-progress: #C4722A;
+  --state-song-mastered:    #2D6B45;
+
+  /* ── Difficulty pills (Song Card) ───────────────────── */
+  --difficulty-easy-bg:           #D4F0E0;
+  --difficulty-easy-fg:           #1A6B3A;
+  --difficulty-medium-bg:         #FEF3C7;
+  --difficulty-medium-fg:         #7A5500;
+  --difficulty-difficult-bg:      #FEE2C2;
+  --difficulty-difficult-fg:      #923B00;
+  --difficulty-very-difficult-bg: #FDDDDD;
+  --difficulty-very-difficult-fg: #8B1A1A;
+
+  /* ── Type families ──────────────────────────────────── */
+  --font-heading: 'New York', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:    'SF Mono', 'JetBrains Mono', Monaco, Consolas, monospace;
+
+  /* ── Type scale (px) ────────────────────────────────── */
+  --text-display: 32px;
+  --text-title:   24px;
+  --text-heading: 20px;
+  --text-body:    16px;
+  --text-small:   14px;
+  --text-caption: 12px;
+
+  /* ── Spacing (4-px scale) ───────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* ── Radii ──────────────────────────────────────────── */
+  --radius-xs:   4px;     /* difficulty pills, small chips */
+  --radius-sm:   6px;     /* buttons, inputs, banners */
+  --radius:     10px;     /* cards (default) */
+  --radius-md:  12px;
+  --radius-lg:  16px;     /* large surfaces */
+  --radius-full: 9999px;  /* badges, audio buttons */
+
+  /* ── Shadows (forest-tinted, never black) ───────────── */
+  --shadow-sm: 0 1px  3px rgba(44, 82, 66, 0.08);
+  --shadow-md: 0 4px 12px rgba(44, 82, 66, 0.12);
+  --shadow-lg: 0 8px 24px rgba(44, 82, 66, 0.16);
+  --shadow:      0 2px 12px rgba(44, 82, 66, 0.07);
+  --shadow-card: 0 4px 24px rgba(44, 82, 66, 0.10);
+
+  /* ── Motion ─────────────────────────────────────────── */
+  --transition-default: 150ms ease-out;
+  --transition-focus:   150ms ease;
+
+  /* Legacy aliases — present in codebase for older components */
+  --color-bg:   var(--color-bg-default);
+  --color-text: var(--color-text-primary);
+}
+
+/* =========================================================
+   Semantic prose styles
+   Use these instead of raw tokens when laying out content.
+   ========================================================= */
+
+.h-display {
+  font-family: var(--font-heading);
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.h-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-title);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.h-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--color-text-primary);
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.t-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.t-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--color-text-primary);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-default: 0ms;
+    --transition-focus:   0ms;
+  }
+}

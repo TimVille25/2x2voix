@@ -1,0 +1,154 @@
+/* =========================================================
+   2×2 Voix — Design tokens
+   ========================================================= */
+
+:root {
+  /* ── Brand color palette ─────────────────────────────── */
+  --color-primary:        #2C5242;
+  --color-primary-dark:   #1C3228;
+  --color-primary-light:  #5A8C78;
+
+  --color-accent:         #C4722A;
+  --color-accent-light:   #FDF3E8;
+
+  --color-success:        #2D6B45;
+  --color-danger:         #B83040;
+  --color-error:          #C0392B;
+
+  --color-warning-bg:     #FEF8EC;
+  --color-warning-border: #D4A830;
+  --color-error-bg:       #FEF0F0;
+  --color-error-border:   #D08080;
+
+  /* ── Surfaces ───────────────────────────────────────── */
+  --color-bg-default: #F6F4EF;
+  --color-bg-active:  #EDE9E0;
+  --color-surface:    #FDFCFA;
+
+  /* ── Text ───────────────────────────────────────────── */
+  --color-text-primary:   #1C1814;
+  --color-text-secondary: #5A5650;
+  --color-text-muted:     #6A6258;
+
+  /* ── Border ─────────────────────────────────────────── */
+  --color-border: #E2D8CC;
+
+  /* ── Type families ──────────────────────────────────── */
+  --font-heading: 'New York', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:    'SF Mono', 'JetBrains Mono', Monaco, Consolas, monospace;
+
+  /* ── Type scale ─────────────────────────────────────── */
+  --text-display: 32px;
+  --text-title:   24px;
+  --text-heading: 20px;
+  --text-body:    16px;
+  --text-small:   14px;
+  --text-caption: 12px;
+
+  /* ── Spacing (4-px scale) ───────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* ── Radii ──────────────────────────────────────────── */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius:     10px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────── */
+  --shadow-sm:   0 1px  3px rgba(44, 82, 66, 0.08);
+  --shadow-md:   0 4px 12px rgba(44, 82, 66, 0.12);
+  --shadow-lg:   0 8px 24px rgba(44, 82, 66, 0.16);
+  --shadow:      0 2px 12px rgba(44, 82, 66, 0.07);
+  --shadow-card: 0 4px 24px rgba(44, 82, 66, 0.10);
+
+  /* ── Motion ─────────────────────────────────────────── */
+  --transition-default: 150ms ease-out;
+  --transition-focus:   150ms ease;
+}
+
+/* Theme variations */
+html[data-theme="warm"] {
+  --color-bg-default: #F2EAD9;
+  --color-bg-active:  #E8DEC8;
+  --color-primary:    #2C5242;
+  --color-accent:     #B85C1E;
+}
+html[data-theme="mono"] {
+  --color-primary:      #1C2624;
+  --color-primary-dark: #0E1311;
+  --color-accent:       #6A6258;
+  --color-bg-default:   #F6F4EF;
+}
+
+/* Typography variations */
+html[data-typo="modern"] {
+  --font-heading: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+}
+html[data-typo="display"] {
+  --font-heading: 'Playfair Display', 'New York', Georgia, serif;
+}
+html[data-typo="hybrid"] {
+  --font-heading: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+}
+html[data-typo="hybrid"] .hero__title,
+html[data-typo="hybrid"] .section__title,
+html[data-typo="hybrid"] .famcard__title,
+html[data-typo="hybrid"] .event__title,
+html[data-typo="hybrid"] .contact__title {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+html[data-typo="hybrid"] .hero__formula,
+html[data-typo="hybrid"] .nav__brand,
+html[data-typo="hybrid"] .footer__brand {
+  font-family: 'Cinzel', 'Trajan Pro', serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+html[data-typo="hybrid"] .hero__formula .times {
+  font-style: italic;
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+html[data-typo="hybrid"] .section__label,
+html[data-typo="hybrid"] .hero__eyebrow,
+html[data-typo="hybrid"] .voicemark__voice,
+html[data-typo="hybrid"] .contact__label,
+html[data-typo="hybrid"] .field__label,
+html[data-typo="hybrid"] .pcard__voice,
+html[data-typo="hybrid"] .pcard__range-label,
+html[data-typo="hybrid"] .famcard__signature-label,
+html[data-typo="hybrid"] .nav__link,
+html[data-typo="hybrid"] .gallery__placeholder {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+}
+html[data-typo="hybrid"] .famcard__period,
+html[data-typo="hybrid"] .voicemark__range,
+html[data-typo="hybrid"] .pcard__range-value,
+html[data-typo="hybrid"] .event__date-year {
+  font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-default: 0ms;
+    --transition-focus:   0ms;
+  }
+}
