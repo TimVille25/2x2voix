@@ -30,10 +30,6 @@ const Hero = ({ variant = 'portraits' }) => {
                     <span className="pcard__first">{m.first}</span>
                     <span className="pcard__last">{m.last}</span>
                   </div>
-                  <div className="pcard__range">
-                    <span className="pcard__range-label">Tessiture</span>
-                    <span className="pcard__range-value">{m.range}</span>
-                  </div>
                 </div>
               </article>
             ))}
@@ -62,15 +58,6 @@ const Hero = ({ variant = 'portraits' }) => {
         </div>
       </div>
 
-      <div className="voicemarks">
-        {MEMBERS.map((m, i) => (
-          <div key={i} className="voicemark">
-            <div className="voicemark__voice">{m.voice}</div>
-            <div className="voicemark__name">{m.first} {m.last}</div>
-            <div className="voicemark__range">{m.range}</div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 };

@@ -285,7 +285,7 @@ img { display: block; max-width: 100%; }
 }
 .pcard__media {
   position: relative;
-  aspect-ratio: 4/4.2;
+  aspect-ratio: 10/13;
   background: var(--color-bg-active);
   overflow: hidden;
 }
@@ -1087,18 +1087,35 @@ img { display: block; max-width: 100%; }
   .event { grid-template-columns: 100px 1fr; gap: 20px; padding: 20px; }
   .event__actions { grid-column: 1 / -1; flex-direction: row; }
   .contact__inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
-  .voicemarks { grid-template-columns: 1fr 1fr; }
-  .voicemark:nth-child(2) { border-right: none; }
-  .voicemark:nth-child(1),
-  .voicemark:nth-child(2) { border-bottom: 1px solid var(--color-border); }
   .form__row { grid-template-columns: 1fr; }
   .section { padding: 64px 24px; }
   .rep__inner { padding: 64px 24px; }
-  .hero--portraits .hero__portraits { grid-template-columns: 1fr 1fr; }
+
+  /* Portrait hero — mobile center variant */
+  .hero--portraits .hero__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero--portraits .hero__copy { order: 0; }
+  .hero--portraits .hero__portraits {
+    order: 1;
+    grid-template-columns: 1fr 1fr;
+    max-width: 380px;
+    width: 100%;
+  }
+  .hero--portraits .hero__copy {
+    text-align: center;
+    max-width: 44ch;
+  }
+  .hero--portraits .hero__eyebrow { justify-content: center; }
+  .hero--portraits .hero__eyebrow::before { display: none; }
+  .hero--portraits .hero__sub { margin: 0 auto 36px; }
+  .hero--portraits .hero__ctas { justify-content: center; }
 }
 
 @media (max-width: 600px) {
-  .hero--portraits .hero__portraits { grid-template-columns: 1fr 1fr; }
+  .hero--portraits .hero__portraits { max-width: 300px; }
   .duos { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
 }
