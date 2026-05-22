@@ -18,7 +18,7 @@ const App = () => {
     <div className="site">
       <Nav />
       <main>
-        <Hero variant="portraits" />
+        <Hero />
         <About />
         <Agenda />
         <Repertoire />
