@@ -90,6 +90,13 @@ const Icon = ({ name, size = 16, stroke = 1.6 }) => {
           <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
         </svg>
       );
+    case "youtube":
+      return (
+        <svg {...common}>
+          <rect x="2" y="5" width="20" height="14" rx="3" />
+          <path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none" />
+        </svg>
+      );
     default:
       return null;
   }

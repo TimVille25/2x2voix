@@ -89,6 +89,21 @@ img { display: block; max-width: 100%; }
   transition: all var(--transition-default);
 }
 .nav__cta:hover { background: var(--color-primary); color: #fff; }
+.nav__social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-default), background var(--transition-default);
+}
+.nav__social-link:hover { color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, transparent); }
 
 .section {
   max-width: 1200px;
