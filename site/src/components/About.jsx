@@ -1,5 +1,5 @@
 const About = () => (
-  <section id="quatuor" className="section section--narrow">
+  <section id="quatuor" className="section">
     <div className="section__label">Qui sommes-nous</div>
     <h2 className="section__title">Quatre frustrations<br />devenues un quatuor.</h2>
 
