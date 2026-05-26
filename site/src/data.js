@@ -13,7 +13,7 @@ export const REPERTOIRE = [
     roman: "I",
     teaser: "Polyphonies a cappella",
     description:
-      "Quatre voix qui s'entrecroisent comme les pierres d'une voûte. Le répertoire de la Renaissance est notre socle — un terrain de jeu pour l'oreille, où chaque ligne mélodique respire pour les autres. Idéal pour les lieux qui ont une histoire&nbsp;: églises, cloîtres, salles voûtées.",
+      "Le répertoire Renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
     composers: ["Guillaume Dufay", "Josquin des Prez", "Clément Janequin", "Roland de Lassus"],
     signature: "Mille regretz",
     signatureComposer: "Josquin des Prez",
