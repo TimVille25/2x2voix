@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { REPERTOIRE } from '../data.js';
 
-const Programme = () => {
+const Programmes = () => {
   const [active, setActive] = useState(REPERTOIRE[0].id);
   return (
-    <section id="programme" className="rep">
+    <section id="programmes" className="rep">
       <div className="rep__inner">
-        <div className="section__label">Programme</div>
+        <div className="section__label">Programmes</div>
         <h2 className="section__title">Cinq siècles,<br />trois familles.</h2>
         <p className="section__lede">
           Nos concerts prennent des formes différentes selon les lieux et
@@ -48,4 +48,4 @@ const Programme = () => {
   );
 };
 
-export default Programme;
+export default Programmes;

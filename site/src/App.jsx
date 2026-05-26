@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
 import Agenda from './components/Agenda.jsx';
 import ArchDraw from './components/ArchDraw.jsx';
-import Programme from './components/Programme.jsx';
+import Programmes from './components/Programmes.jsx';
 import Listen from './components/Listen.jsx';
 import Gallery from './components/Gallery.jsx';
 import Contact from './components/Contact.jsx';
@@ -25,7 +25,7 @@ const App = () => {
           <About />
           <Agenda />
         </div>
-        <Programme />
+        <Programmes />
         <Listen />
         <Gallery />
         <Contact />
