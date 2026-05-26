@@ -41,7 +41,7 @@ function VinylRecord() {
 const Programmes = () => {
   const [active, setActive] = useState(REPERTOIRE[0].id);
   return (
-    <section id="programmes" className="rep">
+    <section id="programmes" className="rep bg-alt">
       <div className="rep__inner">
         <div className="section__label">Programmes</div>
         <h2 className="section__title">Cinq siècles,<br />trois familles.</h2>

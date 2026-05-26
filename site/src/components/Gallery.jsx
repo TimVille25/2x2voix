@@ -20,7 +20,7 @@ const GalleryItem = ({ item, idx }) => (
 );
 
 const Gallery = () => (
-  <section id="galerie" className="section">
+  <section id="galerie" className="section bg-alt">
     <div className="section__label">Galerie</div>
     <h2 className="section__title">Quelques images.</h2>
     <p className="section__lede">

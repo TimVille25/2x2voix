@@ -106,6 +106,8 @@ img { display: block; max-width: 100%; }
 .nav__social-link:hover { color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, transparent); }
 
 
+/* Alternance de fond entre sections */
+.bg-alt { background: var(--color-bg-active); }
 
 .section {
   max-width: 880px;
@@ -469,9 +471,7 @@ img { display: block; max-width: 100%; }
    REPERTOIRE
    ============================================================ */
 
-.rep {
-  background: color-mix(in srgb, var(--color-bg-active) 55%, var(--color-bg-default));
-}
+.rep {}
 .rep__inner {
   max-width: 880px;
   margin: 0 auto;
