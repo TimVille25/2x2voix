@@ -4,7 +4,7 @@ import Icon from './Icon';
 const NAV_LINKS = [
   { id: "quatuor",    label: "Le quatuor" },
   { id: "concerts",   label: "Concerts" },
-  { id: "repertoire", label: "Répertoire" },
+  { id: "programme",  label: "Programme" },
   { id: "ecouter",    label: "Écouter" },
   { id: "galerie",    label: "Galerie" },
 ];
