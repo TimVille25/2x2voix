@@ -14,19 +14,19 @@ export const REPERTOIRE = [
     teaser: "Polyphonies a cappella",
     description:
       "Le répertoire Renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
-    composers: ["Guillaume Dufay", "Josquin des Prez", "Clément Janequin", "Roland de Lassus"],
+    composers: [ "Josquin des Prez", "Clément Janequin", "Roland de Lassus", "Pierre Certon"],
     signature: "Mille regretz",
     signatureComposer: "Josquin des Prez",
   },
   {
     id: "classique",
     label: "Classique",
-    period: "XVIIe — XIXe siècle",
+    period: "XVIIe — XXe siècle",
     roman: "II",
     teaser: "Sacré & profane",
     description:
-      "Du motet baroque à la mélodie romantique arrangée pour quatuor. Nous y trouvons la verticalité du chœur — des accords qui se posent comme des bougies allumées en file. Le sacré et le profane s'y répondent&nbsp;: l'Ave verum côtoie la chanson d'amour, le motet répond au lied.",
-    composers: ["W. A. Mozart", "Gabriel Fauré", "Claude Debussy", "Camille Saint-Saëns"],
+      "Notre répertoire classique explore la musique vocale du baroque au romantisme, dans des arrangements pour quatuor vocal mêlant musique sacrée et profane.<br><br>Motets, mélodies et œuvres chorales y trouvent une forme plus intime à quatre voix, portée par l'équilibre des accords et la clarté des textes.<br><br>L'Ave verum côtoie la chanson d'amour, le motet répond au lied, dans des programmes adaptés aussi bien aux églises qu'aux salles de concert.",
+    composers: ["Gabriel Fauré", "Ola Gjeilo"],
     signature: "Cantique de Jean Racine",
     signatureComposer: "Fauré (arr.)",
   },
@@ -38,9 +38,9 @@ export const REPERTOIRE = [
     teaser: "Chansons à quatre voix",
     description:
       "Une chanson connue, soudain remise en quatre lignes&nbsp;: c'est la surprise que nous aimons offrir en fin de programme. Brel, Bruni, Coldplay, Sting — des textes contemporains arrangés pour soprano, alto, ténor et basse. La pop devient choral, sans rien perdre de son émotion.",
-    composers: ["Jacques Brel", "Carla Bruni", "Coldplay", "Sting"],
-    signature: "La chanson des vieux amants",
-    signatureComposer: "Brel (arr.)",
+    composers: [],
+    signature: "",
+    signatureComposer: "",
   },
 ];
 
