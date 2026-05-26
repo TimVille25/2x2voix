@@ -20,7 +20,7 @@ const Hero = () => (
           Entre héritage vocal et résonances d'aujourd'hui.
         </p>
         <div className="hero__ctas">
-          <a href="#agenda" className="btn btn--primary">
+          <a href="#concerts" className="btn btn--primary">
             Nos concerts <Icon name="arrow-right" size={14} />
           </a>
           <a href="#ecouter" className="btn btn--secondary">
