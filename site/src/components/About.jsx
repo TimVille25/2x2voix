@@ -1,8 +1,8 @@
 const About = () => (
   <section id="quatuor" className="section bg-alt">
     <div className="section__inner">
-      <div className="section__label">Qui sommes-nous</div>
-      <h2 className="section__title">Un quatuor vocal de Franche-Comté.</h2>
+      <h2 className="section__label">Qui sommes-nous</h2>
+      <div className="section__title">Un quatuor vocal de Franche-Comté.</div>
 
       <div className="about__story">
         <p className="ignore-style">

@@ -22,8 +22,8 @@ const GalleryItem = ({ item, idx }) => (
 const Gallery = () => (
   <section id="galerie" className="section bg-alt">
     <div className="section__inner">
-      <div className="section__label">Galerie</div>
-      <h2 className="section__title">Quelques images.</h2>
+      <h2 className="section__label">Galerie</h2>
+      <div className="section__title">Quelques images.</div>
       <p className="section__lede">
         Répétitions, concerts, lieux qui nous ont accueillis. Les photos
         authentiques remplaceront ces placeholders dès la prochaine séance.

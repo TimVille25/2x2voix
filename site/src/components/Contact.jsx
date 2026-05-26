@@ -20,8 +20,8 @@ const Contact = () => {
     <section id="contact" className="contact">
       <div className="contact__inner">
         <div>
-          <div className="contact__label">Nous écrire</div>
-          <h2 className="contact__title">Une église,<br />une occasion,<br />un projet ?</h2>
+          <h2 className="contact__label">Nous écrire</h2>
+          <div className="contact__title">Une église,<br />une occasion,<br />un projet ?</div>
           <p className="contact__sub">
             Nous répondons en quelques jours. Pour un concert, une animation
             ou un mariage&nbsp;: dites-nous où, quand, et nous reviendrons vers vous.

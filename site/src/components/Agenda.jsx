@@ -68,8 +68,8 @@ const EventCard = ({ event }) => (
 const Agenda = () => (
   <section id="concerts" className="section">
     <div className="section__inner">
-      <div className="section__label">Concerts</div>
-      <h2 className="section__title">Prochains concerts.</h2>
+      <h2 className="section__label">Concerts</h2>
+      <div className="section__title">Prochains concerts.</div>
       <p className="section__lede">
         Concerts du quatuor vocal 2×2 Voix à Besançon et en Franche-Comté.{' '}
         Nous chantons quelques fois par an, pour des lieux et des occasions

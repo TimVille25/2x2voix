@@ -93,8 +93,8 @@ const Listen = () => {
   return (
     <section id="ecouter" className="section">
       <div className="section__inner">
-        <div className="section__label">Écouter</div>
-        <h2 className="section__title">Quelques extraits.</h2>
+        <h2 className="section__label">Écouter</h2>
+        <div className="section__title">Quelques extraits.</div>
         <p className="section__lede">
           Quelques pièces tirées de nos répétitions récentes — captées sur le vif,
           sans retouche. De quoi se faire une idée de notre couleur d'ensemble.

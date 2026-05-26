@@ -43,8 +43,8 @@ const Programmes = () => {
   return (
     <section id="programmes" className="rep bg-alt">
       <div className="rep__inner">
-        <div className="section__label">Programmes</div>
-        <h2 className="section__title">Cinq siècles,<br />deux familles.</h2>
+        <h2 className="section__label">Programmes</h2>
+        <div className="section__title">Cinq siècles,<br />deux familles.</div>
         <p className="section__lede">
           Nos concerts prennent des formes différentes selon les lieux et
           les occasions : polyphonies Renaissance ou musique classique sacrée et profane.
