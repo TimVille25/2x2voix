@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const NAV_LINKS = [
   { id: "quatuor",    label: "Le quatuor" },
-  { id: "agenda",     label: "Agenda" },
+  { id: "agenda",     label: "Concerts" },
   { id: "repertoire", label: "Répertoire" },
   { id: "ecouter",    label: "Écouter" },
   { id: "galerie",    label: "Galerie" },

@@ -21,7 +21,7 @@ const Hero = () => (
         </p>
         <div className="hero__ctas">
           <a href="#agenda" className="btn btn--primary">
-            Nos prochains concerts <Icon name="arrow-right" size={14} />
+            Nos concerts <Icon name="arrow-right" size={14} />
           </a>
           <a href="#ecouter" className="btn btn--secondary">
             Écouter un extrait

@@ -67,7 +67,7 @@ const EventCard = ({ event }) => (
 
 const Agenda = () => (
   <section id="agenda" className="section">
-    <div className="section__label">Agenda</div>
+    <div className="section__label">Concerts</div>
     <h2 className="section__title">Prochains concerts.</h2>
     <p className="section__lede">
       Nous chantons quelques fois par an, pour des lieux et des occasions
