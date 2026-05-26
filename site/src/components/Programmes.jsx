@@ -44,11 +44,10 @@ const Programmes = () => {
     <section id="programmes" className="rep bg-alt">
       <div className="rep__inner">
         <div className="section__label">Programmes</div>
-        <h2 className="section__title">Cinq siècles,<br />trois familles.</h2>
+        <h2 className="section__title">Cinq siècles,<br />deux familles.</h2>
         <p className="section__lede">
           Nos concerts prennent des formes différentes selon les lieux et
-          les occasions : polyphonies Renaissance, musique classique ou
-          harmonies contemporaines.
+          les occasions : polyphonies Renaissance ou musique classique sacrée et profane.
         </p>
 
         <div className="famcards">

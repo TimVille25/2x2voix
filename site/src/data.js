@@ -30,19 +30,6 @@ export const REPERTOIRE = [
     signature: "Cantique de Jean Racine",
     signatureComposer: "Fauré (arr.)",
   },
-  {
-    id: "pop",
-    label: "Pop arrangée",
-    period: "XXe — XXIe siècle",
-    roman: "III",
-    teaser: "Chansons à quatre voix",
-    wip: true,
-    description:
-      "Une chanson connue, soudain remise en quatre lignes&nbsp;: c'est la surprise que nous aimons offrir en fin de programme. Brel, Bruni, Coldplay, Sting — des textes contemporains arrangés pour soprano, alto, ténor et basse. La pop devient choral, sans rien perdre de son émotion.",
-    composers: [],
-    signature: "",
-    signatureComposer: "",
-  },
 ];
 
 export const EVENTS = [
