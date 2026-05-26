@@ -144,7 +144,7 @@ img { display: block; max-width: 100%; }
    reads as a faded primary-green watermark in the brand palette. */
 .arch-draw__inline .arch-draw__svg,
 .arch-draw__inline .arch-draw__svg g {
-  color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  color: color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 /* Notes overlay — a small SVG layer at the bottom of the scene. */
@@ -161,12 +161,12 @@ img { display: block; max-width: 100%; }
   transition: opacity 0.5s ease;
 }
 .arch-draw__notes ellipse {
-  fill: rgba(44, 82, 66, 0.22);
+  fill: rgba(44, 82, 66, 0.10);
   stroke: none;
 }
 .arch-draw__notes line {
   fill: none;
-  stroke: rgba(44, 82, 66, 0.22);
+  stroke: rgba(44, 82, 66, 0.10);
   stroke-width: 0.75;
   stroke-linecap: round;
 }
