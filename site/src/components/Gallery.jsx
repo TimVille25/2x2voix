@@ -21,14 +21,16 @@ const GalleryItem = ({ item, idx }) => (
 
 const Gallery = () => (
   <section id="galerie" className="section bg-alt">
-    <div className="section__label">Galerie</div>
-    <h2 className="section__title">Quelques images.</h2>
-    <p className="section__lede">
-      Répétitions, concerts, lieux qui nous ont accueillis. Les photos
-      authentiques remplaceront ces placeholders dès la prochaine séance.
-    </p>
-    <div className="gallery">
-      {GALLERY.map((g, i) => <GalleryItem key={i} item={g} idx={i} />)}
+    <div className="section__inner">
+      <div className="section__label">Galerie</div>
+      <h2 className="section__title">Quelques images.</h2>
+      <p className="section__lede">
+        Répétitions, concerts, lieux qui nous ont accueillis. Les photos
+        authentiques remplaceront ces placeholders dès la prochaine séance.
+      </p>
+      <div className="gallery">
+        {GALLERY.map((g, i) => <GalleryItem key={i} item={g} idx={i} />)}
+      </div>
     </div>
   </section>
 );

@@ -67,15 +67,17 @@ const EventCard = ({ event }) => (
 
 const Agenda = () => (
   <section id="concerts" className="section">
-    <div className="section__label">Concerts</div>
-    <h2 className="section__title">Prochains concerts.</h2>
-    <p className="section__lede">
-      Concerts du quatuor vocal 2×2 Voix à Besançon et en Franche-Comté.{' '}
-      Nous chantons quelques fois par an, pour des lieux et des occasions
-      qui ont du sens. Voici où nous retrouver dans les mois qui viennent.
-    </p>
-    <div className="agenda">
-      {EVENTS.map(e => <EventCard key={e.id} event={e} />)}
+    <div className="section__inner">
+      <div className="section__label">Concerts</div>
+      <h2 className="section__title">Prochains concerts.</h2>
+      <p className="section__lede">
+        Concerts du quatuor vocal 2×2 Voix à Besançon et en Franche-Comté.{' '}
+        Nous chantons quelques fois par an, pour des lieux et des occasions
+        qui ont du sens. Voici où nous retrouver dans les mois qui viennent.
+      </p>
+      <div className="agenda">
+        {EVENTS.map(e => <EventCard key={e.id} event={e} />)}
+      </div>
     </div>
   </section>
 );

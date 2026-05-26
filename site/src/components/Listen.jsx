@@ -64,22 +64,24 @@ const Listen = () => {
 
   return (
     <section id="ecouter" className="section">
-      <div className="section__label">Écouter</div>
-      <h2 className="section__title">Quelques extraits.</h2>
-      <p className="section__lede">
-        Trois pièces tirées de nos répétitions récentes — captées sur le vif,
-        sans retouche. De quoi se faire une idée de notre couleur d'ensemble.
-      </p>
-      <div className="listen__grid">
-        {TRACKS.map((t, i) => (
-          <Track
-            key={i}
-            track={t}
-            isPlaying={playingIdx === i}
-            onToggle={() => toggle(i)}
-            progress={progress[i] || 0}
-          />
-        ))}
+      <div className="section__inner">
+        <div className="section__label">Écouter</div>
+        <h2 className="section__title">Quelques extraits.</h2>
+        <p className="section__lede">
+          Trois pièces tirées de nos répétitions récentes — captées sur le vif,
+          sans retouche. De quoi se faire une idée de notre couleur d'ensemble.
+        </p>
+        <div className="listen__grid">
+          {TRACKS.map((t, i) => (
+            <Track
+              key={i}
+              track={t}
+              isPlaying={playingIdx === i}
+              onToggle={() => toggle(i)}
+              progress={progress[i] || 0}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -110,6 +110,9 @@ img { display: block; max-width: 100%; }
 .bg-alt { background: var(--color-bg-active); }
 
 .section {
+  /* pleine largeur — le fond couvre tout le viewport */
+}
+.section__inner {
   max-width: 880px;
   margin: 0 auto;
   padding: 96px 32px;
@@ -1100,7 +1103,7 @@ img { display: block; max-width: 100%; }
   .event__actions { grid-column: 1 / -1; flex-direction: row; }
   .contact__inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
   .form__row { grid-template-columns: 1fr; }
-  .section { padding: 64px 24px; }
+  .section__inner { padding: 64px 24px; }
   .rep__inner { padding: 64px 24px; }
 
 }
