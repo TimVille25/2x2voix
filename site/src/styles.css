@@ -106,52 +106,53 @@ img { display: block; max-width: 100%; }
 .nav__social-link:hover { color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 8%, transparent); }
 
 /* ============================================================
-   Scroll arch
+   Arch decoration — panneau droit de la section About
    ============================================================ */
 
-.arch-scene {
-  position: relative;
+/* Ligne flex : texte à gauche, arche à droite, les deux à la même hauteur. */
+.about-scene {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden; /* pas de scroll horizontal */
+}
+
+/* La section About cède la place à l'arche : taille fixe, sans margin auto. */
+.about-scene > .section {
+  flex: 0 0 auto;
+  margin: 0;
+  width: min(580px, 100%);
 }
 
 .arch-draw {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: visible;
-  z-index: 0;
-}
-/* Sections that sit over the arch paint on top — keeps text/cards above the
-   watermark even though they have no opaque background of their own. */
-.arch-scene > section {
   position: relative;
-  z-index: 1;
+  flex-shrink: 0;
+  pointer-events: none;
 }
 
-/* Inline-SVG wrapper anchored to the top of the scene. The SVG itself scales
-   to fit the wrapper width while preserving its arch proportions. */
+/* Le wrapper prend toute la hauteur de la section About.
+   L'aspect-ratio correspond au viewBox (180 70 320 555) :
+   la largeur est déduite automatiquement de la hauteur. */
 .arch-draw__inline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  height: 100%;
+  aspect-ratio: 320 / 555;
 }
 .arch-draw__inline .arch-draw__svg {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
-/* Override the SVG's hardcoded color="#3a352c" on each inner group so the arch
-   reads as a faded primary-green watermark in the brand palette. */
+/* Traits architecturaux en vert primaire. */
 .arch-draw__inline .arch-draw__svg,
 .arch-draw__inline .arch-draw__svg g {
-  color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: color-mix(in srgb, var(--color-primary) 28%, transparent);
 }
 
-/* Notes overlay — a small SVG layer at the bottom of the scene. */
+/* Notes en bas du panneau arche. */
 .arch-draw__notes-svg {
   position: absolute;
   left: 50%;
-  bottom: 64px;
+  bottom: 32px;
   width: 200px;
   height: 40px;
   transform: translateX(-50%);

@@ -20,11 +20,11 @@ const App = () => {
       <Nav />
       <main>
         <Hero />
-        <div className="arch-scene">
-          <ArchDraw />
+        <div className="about-scene">
           <About />
-          <Agenda />
+          <ArchDraw />
         </div>
+        <Agenda />
         <Programmes />
         <Listen />
         <Gallery />

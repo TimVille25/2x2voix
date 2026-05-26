@@ -20,8 +20,8 @@ export default function ArchDraw() {
     const svg = container.querySelector('svg');
     if (!svg) return;
 
-    // Let the SVG scale into the arch-scene; preserve the arch's proportions
-    // and anchor it to the top so the apex sits above About.
+    // Le SVG se règle en hauteur (100 % de la section About) ; la largeur
+    // est automatique selon le viewBox carré 680×680.
     svg.setAttribute('preserveAspectRatio', 'xMidYMin meet');
     svg.removeAttribute('width');
     svg.removeAttribute('height');
@@ -39,6 +39,15 @@ export default function ArchDraw() {
         })
       : [];
 
+    // Les arches courbes (d contient Q) partent immédiatement.
+    // Les piliers droits (lines + paths sans Q) démarrent plus tard.
+    const PILLAR_DELAY = 0.75;
+    const delays = archEls.map(el => {
+      if (el.tagName.toLowerCase() === 'line') return PILLAR_DELAY;
+      const d = el.getAttribute('d') || '';
+      return d.includes('Q') ? 0 : PILLAR_DELAY;
+    });
+
     const lens = [];
     for (const el of archEls) {
       const len = el.getTotalLength();
@@ -53,22 +62,27 @@ export default function ArchDraw() {
     }
 
     function tick() {
-      const scene = container.closest('.arch-scene');
-      if (!scene) return;
-      const rect = scene.getBoundingClientRect();
-      // p = 0 quand le haut de la scène entre dans le viewport par le bas,
-      // p = 1 après une hauteur d'écran de défilement dans la section.
-      const p = clamp(-rect.top / window.innerHeight, 0, 1);
+      const anchor = document.getElementById('quatuor');
+      if (!anchor) return;
+      const anchorRect = anchor.getBoundingClientRect();
+      // p = 0 quand #quatuor est à 25 % du bas de l'écran (top = 75 % de innerHeight),
+      // p = 1 quand #quatuor est à 90 % du bas de l'écran (top = 10 % de innerHeight).
+      const p = clamp(
+        (window.innerHeight * 0.75 - anchorRect.top) / (window.innerHeight * 0.65),
+        0, 1
+      );
 
-      // Architectural outline draws over the first 65% of scroll progress.
-      const ap = clamp(p / 0.20, 0, 1);
+      // Arches courbes : progression directe.
+      // Piliers droits : démarrent après PILLAR_DELAY.
       for (let i = 0; i < archEls.length; i++) {
-        archEls[i].style.strokeDashoffset = `${lens[i] * (1 - ap)}`;
+        const d = delays[i];
+        const ep = d < 1 ? clamp((p - d) / (1 - d), 0, 1) : 0;
+        archEls[i].style.strokeDashoffset = `${lens[i] * (1 - ep)}`;
       }
 
-      // Tympanum tracery fades in once the outline is mostly drawn.
+      // Remplissage du tympan apparaît dans la seconde moitié.
       if (tympGroup) {
-        tympGroup.style.opacity = `${clamp((p - 0.05) / 0.30, 0, 1)}`;
+        tympGroup.style.opacity = `${clamp((p - 0.55) / 0.35, 0, 1)}`;
       }
 
       if (notesRef.current) {
