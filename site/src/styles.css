@@ -115,50 +115,48 @@ img { display: block; max-width: 100%; }
 
 .arch-draw {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   overflow: visible;
+  z-index: 0;
+}
+/* Sections that sit over the arch paint on top — keeps text/cards above the
+   watermark even though they have no opaque background of their own. */
+.arch-scene > section {
+  position: relative;
   z-index: 1;
 }
 
-/* Main arch strokes (outer + inner archivolts + pillars) */
-.arch-draw__line {
-  fill: none;
-  stroke: rgba(44, 82, 66, 0.22);
-  stroke-width: 0.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* Inline-SVG wrapper anchored to the top of the scene. The SVG itself scales
+   to fit the wrapper width while preserving its arch proportions. */
+.arch-draw__inline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-/* Label mold (dripstone) — slightly thinner, outer ring */
-.arch-draw__line--lm {
-  stroke-width: 0.6;
-  stroke: rgba(44, 82, 66, 0.16);
+.arch-draw__inline .arch-draw__svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
-/* Voussoirs, keystone, capitals, bases */
-.arch-draw__detail {
-  fill: rgba(44, 82, 66, 0.03);   /* barely-there fill closes keystone diamond */
-  stroke: rgba(44, 82, 66, 0.18);
-  stroke-width: 0.65;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: opacity 0.7s ease;
+/* Override the SVG's hardcoded color="#3a352c" on each inner group so the arch
+   reads as a faded primary-green watermark in the brand palette. */
+.arch-draw__inline .arch-draw__svg,
+.arch-draw__inline .arch-draw__svg g {
+  color: color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
-/* Tympanum, oculus, shaft rings */
-.arch-draw__ornament {
-  fill: none;
-  stroke: rgba(44, 82, 66, 0.15);
-  stroke-width: 0.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: opacity 0.7s ease;
+/* Notes overlay — a small SVG layer at the bottom of the scene. */
+.arch-draw__notes-svg {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+  width: 200px;
+  height: 40px;
+  transform: translateX(-50%);
+  overflow: visible;
 }
-
-/* Piano notes */
 .arch-draw__notes {
   transition: opacity 0.5s ease;
 }
@@ -267,6 +265,7 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   align-items: center;
+  align-content: center;
   min-height: 72vh;
 }
 .hero__formula {
@@ -277,10 +276,31 @@ img { display: block; max-width: 100%; }
   letter-spacing: -0.04em;
   font-size: clamp(140px, 22vw, 320px);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
-  gap: 0.05em;
+  gap: 0;
+  width: fit-content;
   position: relative;
+}
+.hero__formula-row {
+  display: flex;
+  align-items: center;
+  gap: 0.05em;
+  line-height: 0.9;
+}
+.hero__formula-voix {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.46em;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-top: -0.05em;
+  display: block;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: inter-character;
 }
 .hero__formula .digit { display: inline-block; }
 .hero__formula .digit--accent { color: var(--color-accent); }

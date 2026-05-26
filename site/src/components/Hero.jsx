@@ -3,22 +3,19 @@ import Icon from './Icon.jsx';
 const Hero = () => (
   <section id="hero" className="hero">
     <div className="hero__grid">
-      <div className="hero__formula" aria-hidden="true">
-        <span className="digit">2</span>
-        <span className="times">×</span>
-        <span className="digit digit--accent">2</span>
-      </div>
+      <h1 className="hero__formula">
+        <span className="hero__formula-row">
+          <span className="digit">2</span>
+          <span className="times">×</span>
+          <span className="digit digit--accent">2</span>
+        </span>
+        <span className="hero__formula-voix">Voix</span>
+      </h1>
       <div className="hero__copy">
-        <div className="hero__eyebrow">Quatuor vocal</div>
-        <h1 className="hero__title">
-          Quatre voix,<br />
-          <em>deux duos,</em><br />
-          un seul souffle.
-        </h1>
+        <div className="hero__eyebrow">Quatuor vocal à Besançon</div>
         <p className="hero__sub">
-          Soprano, alto, ténor, basse&nbsp;: nous chantons la Renaissance,
-          le sacré classique et la pop arrangée — comme on traverse une
-          même cathédrale, à quatre voix mais d'un même pas.
+          Renaissance, classique et harmonies contemporaines.<br />
+          Concerts et événements en Franche-Comté.
         </p>
         <div className="hero__ctas">
           <a href="#agenda" className="btn btn--primary">
