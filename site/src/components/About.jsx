@@ -6,17 +6,19 @@ const About = () => (
     <div className="about__story">
       <p>
         2×2 Voix est un quatuor vocal basé à Besançon.
-        Nous chantons un répertoire qui mêle polyphonies Renaissance,
-        musique classique et arrangements contemporains.
       </p>
       <p>
-        Le groupe est né de l'envie simple de chanter ensemble des œuvres
-        que nous aimons, sans nous limiter à une époque ou à un style.
+        Nous proposons plusieurs programmes autour des polyphonies Renaissance,
+        de la musique classique et des harmonies contemporaines, en nous adaptant
+        aux lieux et aux événements.
       </p>
       <p>
-        Nous aimons faire dialoguer les répertoires, passer de Monteverdi
-        à Brel ou de Dufay à Coldplay, toujours avec le même plaisir
-        des voix mêlées.
+        Selon les concerts, nous explorons un répertoire sacré, des œuvres
+        anciennes, des arrangements vocaux ou des programmes plus actuels.
+      </p>
+      <p>
+        Ce qui nous rassemble&nbsp;: le plaisir du chant à quatre voix et
+        l'envie de partager une musique vivante et accessible.
       </p>
     </div>
   </section>
