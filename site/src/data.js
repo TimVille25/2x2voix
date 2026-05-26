@@ -13,7 +13,7 @@ export const REPERTOIRE = [
     roman: "I",
     teaser: "Polyphonies a cappella",
     description:
-      "Le répertoire Renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
+      "Le programme renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
     composers: [ "Josquin des Prez", "Clément Janequin", "Roland de Lassus", "Pierre Certon", "John Bennet"],
     signature: "Mille regretz",
     signatureComposer: "Josquin des Prez",
@@ -25,7 +25,7 @@ export const REPERTOIRE = [
     roman: "II",
     teaser: "Sacré & profane",
     description:
-      "Notre répertoire classique explore la musique vocale du baroque au romantisme, dans des arrangements pour quatuor vocal mêlant musique sacrée et profane.<br><br>Motets, mélodies et œuvres chorales y trouvent une forme plus intime à quatre voix, portée par l'équilibre des accords et la clarté des textes.<br><br>L'Ave verum côtoie la chanson d'amour, le motet répond au lied, dans des programmes adaptés aussi bien aux églises qu'aux salles de concert.",
+      "Notre programme classique explore la musique vocale du baroque au romantisme, dans des arrangements pour quatuor vocal mêlant musique sacrée et profane.<br><br>Motets, mélodies et œuvres chorales y trouvent une forme plus intime à quatre voix, portée par l'équilibre des accords et la clarté des textes.<br><br>L'Ave verum côtoie la chanson d'amour, le motet répond au lied, dans des programmes adaptés aussi bien aux églises qu'aux salles de concert.",
     composers: ["Gabriel Fauré", "Ola Gjeilo", "Anton Bruckner"],
     signature: "Cantique de Jean Racine",
     signatureComposer: "Fauré (arr.)",
