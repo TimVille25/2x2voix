@@ -148,29 +148,6 @@ img { display: block; max-width: 100%; }
   color: color-mix(in srgb, var(--color-primary) 28%, transparent);
 }
 
-/* Notes en bas du panneau arche. */
-.arch-draw__notes-svg {
-  position: absolute;
-  left: 50%;
-  bottom: 32px;
-  width: 200px;
-  height: 40px;
-  transform: translateX(-50%);
-  overflow: visible;
-}
-.arch-draw__notes {
-  transition: opacity 0.5s ease;
-}
-.arch-draw__notes ellipse {
-  fill: rgba(44, 82, 66, 0.10);
-  stroke: none;
-}
-.arch-draw__notes line {
-  fill: none;
-  stroke: rgba(44, 82, 66, 0.10);
-  stroke-width: 0.75;
-  stroke-linecap: round;
-}
 
 .section {
   max-width: 880px;

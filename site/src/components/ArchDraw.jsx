@@ -1,17 +1,10 @@
 import { useEffect, useRef } from 'react';
 import archSvgRaw from '../assets/arche.svg?raw';
 
-const NOTES = [
-  { dx: -64, dy: 10 }, { dx: -32, dy: 2 }, { dx: 0, dy: -8 },
-  { dx: 32,  dy:  2 }, { dx:  64, dy: 10 },
-];
-const NOTE_BELOW = 64;
-
 function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
 
 export default function ArchDraw() {
   const containerRef = useRef(null);
-  const notesRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -84,16 +77,11 @@ export default function ArchDraw() {
       if (tympGroup) {
         tympGroup.style.opacity = `${clamp((p - 0.55) / 0.35, 0, 1)}`;
       }
-
-      if (notesRef.current) {
-        notesRef.current.style.opacity = `${clamp((p - 0.85) / 0.15, 0, 1)}`;
-      }
     }
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       for (const el of archEls) el.style.strokeDashoffset = '0';
       if (tympGroup) tympGroup.style.opacity = '1';
-      if (notesRef.current) notesRef.current.style.opacity = '1';
       return;
     }
 
@@ -115,16 +103,6 @@ export default function ArchDraw() {
         className="arch-draw__inline"
         dangerouslySetInnerHTML={{ __html: archSvgRaw }}
       />
-      <svg className="arch-draw__notes-svg">
-        <g ref={notesRef} className="arch-draw__notes" opacity="0">
-          {NOTES.map(({ dx, dy }, i) => (
-            <g key={i} transform={`translate(${dx},${dy})`}>
-              <ellipse cx="0" cy="0" rx="5" ry="3.8" transform="rotate(-18,0,0)" />
-              <line x1="4.6" y1="-0.5" x2="4.6" y2="-20" />
-            </g>
-          ))}
-        </g>
-      </svg>
     </div>
   );
 }
