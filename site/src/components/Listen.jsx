@@ -96,7 +96,7 @@ const Listen = () => {
         <div className="section__label">Écouter</div>
         <h2 className="section__title">Quelques extraits.</h2>
         <p className="section__lede">
-          Trois pièces tirées de nos répétitions récentes — captées sur le vif,
+          Quelques pièces tirées de nos répétitions récentes — captées sur le vif,
           sans retouche. De quoi se faire une idée de notre couleur d'ensemble.
         </p>
         <div className="listen__grid">
