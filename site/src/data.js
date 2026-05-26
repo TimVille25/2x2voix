@@ -72,9 +72,9 @@ export const EVENTS = [
 ];
 
 export const TRACKS = [
-  { title: "Nothern lights",      sub: "Ola Gjeilo",        duration: 254, src: "/audio/Northern lights.mp3" },
-  { title: "Cantique de Jean Racine", sub: "Fauré · extrait",        duration: 215, src: null },
-  { title: "Quelqu'un m'a dit",       sub: "Bruni (arr.) · extrait", duration: 168, src: null },
+  { title: "Nothern lights",        sub: "Ola Gjeilo",        duration: 254, file: "northern-lights.mp3" },
+  { title: "Cantique de Jean Racine", sub: "Fauré · extrait",  duration: 215, file: null },
+  { title: "Quelqu'un m'a dit",       sub: "Bruni (arr.) · extrait", duration: 168, file: null },
 ];
 
 export const GALLERY = [

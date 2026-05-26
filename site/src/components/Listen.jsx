@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { TRACKS } from '../data.js';
 import Icon from './Icon.jsx';
 
+const base = import.meta.env.BASE_URL;                      // '/2x2voix/' en prod, '/' en dev
+const audioUrl = (file) => `${base}audio/${file}`;
+
 const fmt = (s) => {
   if (!isFinite(s) || s < 0) return '0:00';
   const m = Math.floor(s / 60);
@@ -12,7 +15,7 @@ const fmt = (s) => {
 const Track = ({ track, isPlaying, onToggle, progress, duration }) => {
   const dur = duration || track.duration;
   const pct = dur > 0 ? Math.min(100, (progress / dur) * 100) : 0;
-  const unavailable = !track.src;
+  const unavailable = !track.file;
 
   return (
     <article className={`track ${isPlaying ? 'is-playing' : ''} ${unavailable ? 'track--unavailable' : ''}`}>
@@ -53,7 +56,7 @@ const Listen = () => {
 
   const toggle = (i) => {
     const track = TRACKS[i];
-    if (!track.src) return;
+    if (!track.file) return;
 
     // Pause de la piste en cours
     if (playingIdx === i) {
@@ -69,7 +72,7 @@ const Listen = () => {
       audioRef.current.onended      = null;
     }
 
-    const audio = new Audio(track.src);
+    const audio = new Audio(audioUrl(track.file));
     audioRef.current = audio;
 
     audio.onloadedmetadata = () =>
