@@ -503,7 +503,7 @@ img { display: block; max-width: 100%; }
 /* Arche : haute et fine, elle s'étire à la hauteur de la card */
 .prog-deco--arch {
   align-self: stretch;
-  color: rgba(90, 74, 46, 0.28);
+  color: rgba(90, 74, 46, 0.60);
 }
 .prog-deco--arch svg {
   display: block;
