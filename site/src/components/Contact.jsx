@@ -30,7 +30,16 @@ const Contact = () => {
             <div className="contact__detail"><Icon name="mail" size={16} /> contact@2x2voix.fr</div>
             <div className="contact__detail"><Icon name="phone" size={16} /> +33 6 12 34 56 78</div>
             <div className="contact__detail"><Icon name="map-pin" size={16} /> Basés en Bourgogne–Franche-Comté</div>
-            <div className="contact__detail"><Icon name="instagram" size={16} /> @2x2voix</div>
+            <div className="contact__detail">
+              <a href="https://www.instagram.com/2x2voix" target="_blank" rel="noopener noreferrer" className="contact__detail-link">
+                <Icon name="instagram" size={16} /> @2x2voix
+              </a>
+            </div>
+            <div className="contact__detail">
+              <a href="https://www.youtube.com/@2x2voix" target="_blank" rel="noopener noreferrer" className="contact__detail-link">
+                <Icon name="youtube" size={16} /> youtube.com/@2x2voix
+              </a>
+            </div>
           </div>
         </div>
 

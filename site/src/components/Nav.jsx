@@ -47,7 +47,7 @@ const Nav = () => {
           <a href="#" className="nav__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
             <Icon name="instagram" size={18} stroke={1.5} />
           </a>
-          <a href="#" className="nav__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@2x2voix" className="nav__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
             <Icon name="youtube" size={18} stroke={1.5} />
           </a>
         </div>

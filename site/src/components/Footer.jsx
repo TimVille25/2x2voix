@@ -1,7 +1,29 @@
+import Icon from './Icon.jsx';
+
 const Footer = () => (
   <footer className="footer">
     <div className="footer__brand">
       2<span style={{ color: 'var(--color-accent)', fontStyle: 'italic' }}>×</span>2 Voix
+    </div>
+    <div className="footer__social">
+      <a
+        href="https://www.instagram.com/2x2voix"
+        className="footer__social-link"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="instagram" size={16} stroke={1.5} />
+      </a>
+      <a
+        href="https://www.youtube.com/@2x2voix"
+        className="footer__social-link"
+        aria-label="YouTube"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="youtube" size={16} stroke={1.5} />
+      </a>
     </div>
     <div>Quatuor vocal · contact@2x2voix.fr · © {new Date().getFullYear()}</div>
   </footer>
