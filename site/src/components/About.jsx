@@ -1,10 +1,10 @@
 const About = () => (
   <section id="quatuor" className="section">
     <div className="section__label">Qui sommes-nous</div>
-    <h2 className="section__title">Quatre frustrations<br />devenues un quatuor.</h2>
+    <h2 className="section__title">Un quatuor vocal de Franche-Comté.</h2>
 
     <div className="about__story">
-      <p>
+      <p className="ignore-style">
         2×2 Voix est un quatuor vocal basé à Besançon.
       </p>
       <p>

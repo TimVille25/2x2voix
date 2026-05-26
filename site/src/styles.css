@@ -450,15 +450,6 @@ img { display: block; max-width: 100%; }
   margin-bottom: 18px;
   text-wrap: pretty;
 }
-.about__story p:first-child::first-letter {
-  font-family: var(--font-heading);
-  float: left;
-  font-size: 64px;
-  line-height: 0.95;
-  padding: 4px 10px 0 0;
-  color: var(--color-accent);
-  font-weight: 500;
-}
 
 .duos {
   display: grid;
