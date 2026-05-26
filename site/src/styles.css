@@ -354,6 +354,16 @@ img { display: block; max-width: 100%; }
   max-width: 44ch;
   text-wrap: pretty;
 }
+.hero__sub-location {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
 .hero__ctas {
   display: flex;
   gap: 12px;

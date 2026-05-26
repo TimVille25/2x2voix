@@ -3,7 +3,7 @@ import Icon from './Icon.jsx';
 const Hero = () => (
   <section id="hero" className="hero">
     <div className="hero__grid">
-      <h1 className="hero__formula">
+      <h1 className="hero__formula" aria-label="2×2 Voix">
         <span className="hero__formula-row">
           <span className="digit">2</span>
           <span className="times">×</span>
@@ -12,10 +12,10 @@ const Hero = () => (
         <span className="hero__formula-voix">Voix</span>
       </h1>
       <div className="hero__copy">
-        <div className="hero__eyebrow">Quatuor vocal à Besançon</div>
         <p className="hero__sub">
-          Renaissance, classique et harmonies contemporaines.<br />
-          Concerts et événements en Franche-Comté.
+          <strong className="hero__sub-location">Quatuor vocal à Besançon</strong>
+          <br />
+          Polyphonies Renaissance, classique et harmonies contemporaines.
         </p>
         <div className="hero__ctas">
           <a href="#agenda" className="btn btn--primary">
