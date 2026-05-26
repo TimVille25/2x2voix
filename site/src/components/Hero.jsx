@@ -16,6 +16,8 @@ const Hero = () => (
           <strong className="hero__sub-location">Quatuor vocal à Besançon</strong>
           <br />
           Polyphonies Renaissance, classique et harmonies contemporaines.
+          <br />
+          Entre héritage vocal et résonances d'aujourd'hui.
         </p>
         <div className="hero__ctas">
           <a href="#agenda" className="btn btn--primary">
