@@ -3,7 +3,6 @@ import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
 import Agenda from './components/Agenda.jsx';
-import ArchDraw from './components/ArchDraw.jsx';
 import Programmes from './components/Programmes.jsx';
 import Listen from './components/Listen.jsx';
 import Gallery from './components/Gallery.jsx';
@@ -20,10 +19,7 @@ const App = () => {
       <Nav />
       <main>
         <Hero />
-        <div className="about-scene">
-          <About />
-          <ArchDraw />
-        </div>
+        <About />
         <Agenda />
         <Programmes />
         <Listen />
