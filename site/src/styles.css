@@ -490,9 +490,6 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 32px;
 }
-.famcard-row--classique {
-  flex-direction: row-reverse;
-}
 
 /* Colonne décorative */
 .prog-deco {
