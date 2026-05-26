@@ -82,6 +82,11 @@ const Programmes = () => {
                   <div className="famcard__head">
                     <span className="famcard__roman" aria-hidden="true">{cat.roman}</span>
                     <span className="famcard__period">{cat.period}</span>
+                    {cat.wip && (
+                      <span className="famcard__wip" aria-label="En construction">
+                        En construction
+                      </span>
+                    )}
                   </div>
                   <h3 className="famcard__title">{cat.label}</h3>
                   <div className="famcard__teaser">{cat.teaser}</div>

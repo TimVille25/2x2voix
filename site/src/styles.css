@@ -664,6 +664,20 @@ img { display: block; max-width: 100%; }
   color: var(--color-text-secondary);
   font-style: italic;
 }
+.famcard__wip {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  background: var(--color-bg-active);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 .famcard--renaissance::before { background: #5A4A2E; }
 .famcard--renaissance .famcard__roman { color: #5A4A2E; }
 .famcard--classique::before { background: var(--color-primary); }
