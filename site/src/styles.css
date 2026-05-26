@@ -799,6 +799,9 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .track__play:hover { background: var(--color-primary-dark); }
+.track--unavailable { opacity: 0.45; }
+.track--unavailable .track__play { cursor: not-allowed; }
+.track--unavailable .track__play:hover { background: var(--color-primary); }
 .track__play.is-playing { background: var(--color-accent); }
 .track__play.is-playing::before {
   content: "";

@@ -72,9 +72,9 @@ export const EVENTS = [
 ];
 
 export const TRACKS = [
-  { title: "Se la face ay pale",      sub: "Dufay · extrait",        duration: 142 },
-  { title: "Cantique de Jean Racine", sub: "Fauré · extrait",        duration: 215 },
-  { title: "Quelqu'un m'a dit",       sub: "Bruni (arr.) · extrait", duration: 168 },
+  { title: "Nothern lights",      sub: "Ola Gjeilo",        duration: 254, src: "/audio/Northern lights.mp3" },
+  { title: "Cantique de Jean Racine", sub: "Fauré · extrait",        duration: 215, src: null },
+  { title: "Quelqu'un m'a dit",       sub: "Bruni (arr.) · extrait", duration: 168, src: null },
 ];
 
 export const GALLERY = [

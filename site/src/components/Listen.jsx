@@ -3,20 +3,26 @@ import { TRACKS } from '../data.js';
 import Icon from './Icon.jsx';
 
 const fmt = (s) => {
+  if (!isFinite(s) || s < 0) return '0:00';
   const m = Math.floor(s / 60);
   const sec = Math.floor(s % 60);
   return `${m}:${String(sec).padStart(2, '0')}`;
 };
 
-const Track = ({ track, isPlaying, onToggle, progress }) => {
-  const pct = Math.min(100, (progress / track.duration) * 100);
+const Track = ({ track, isPlaying, onToggle, progress, duration }) => {
+  const dur = duration || track.duration;
+  const pct = dur > 0 ? Math.min(100, (progress / dur) * 100) : 0;
+  const unavailable = !track.src;
+
   return (
-    <article className={`track ${isPlaying ? 'is-playing' : ''}`}>
+    <article className={`track ${isPlaying ? 'is-playing' : ''} ${unavailable ? 'track--unavailable' : ''}`}>
       <div className="track__head">
         <button
           className={`track__play ${isPlaying ? 'is-playing' : ''}`}
-          onClick={onToggle}
+          onClick={unavailable ? undefined : onToggle}
           aria-label={isPlaying ? 'Pause' : 'Lecture'}
+          disabled={unavailable}
+          title={unavailable ? 'Fichier audio non disponible' : undefined}
         >
           <Icon name={isPlaying ? 'pause' : 'play'} size={18} />
         </button>
@@ -30,7 +36,7 @@ const Track = ({ track, isPlaying, onToggle, progress }) => {
       </div>
       <div className="track__time">
         <span>{fmt(progress)}</span>
-        <span>{fmt(track.duration)}</span>
+        <span>{fmt(dur)}</span>
       </div>
     </article>
   );
@@ -38,29 +44,48 @@ const Track = ({ track, isPlaying, onToggle, progress }) => {
 
 const Listen = () => {
   const [playingIdx, setPlayingIdx] = useState(null);
-  const [progress, setProgress] = useState({});
-  const timerRef = useRef(null);
+  const [progress, setProgress]     = useState({});
+  const [durations, setDurations]   = useState({});
+  const audioRef = useRef(null);
 
-  useEffect(() => {
-    if (playingIdx === null) {
-      clearInterval(timerRef.current);
+  // Nettoyer l'audio à la destruction du composant
+  useEffect(() => () => { audioRef.current?.pause(); }, []);
+
+  const toggle = (i) => {
+    const track = TRACKS[i];
+    if (!track.src) return;
+
+    // Pause de la piste en cours
+    if (playingIdx === i) {
+      audioRef.current?.pause();
+      setPlayingIdx(null);
       return;
     }
-    timerRef.current = setInterval(() => {
-      setProgress(p => {
-        const cur = p[playingIdx] || 0;
-        const dur = TRACKS[playingIdx].duration;
-        if (cur >= dur) {
-          setPlayingIdx(null);
-          return { ...p, [playingIdx]: 0 };
-        }
-        return { ...p, [playingIdx]: cur + 1 };
-      });
-    }, 1000);
-    return () => clearInterval(timerRef.current);
-  }, [playingIdx]);
 
-  const toggle = (i) => setPlayingIdx(cur => cur === i ? null : i);
+    // Arrêter la piste précédente
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.ontimeupdate = null;
+      audioRef.current.onended      = null;
+    }
+
+    const audio = new Audio(track.src);
+    audioRef.current = audio;
+
+    audio.onloadedmetadata = () =>
+      setDurations(d => ({ ...d, [i]: audio.duration }));
+
+    audio.ontimeupdate = () =>
+      setProgress(p => ({ ...p, [i]: audio.currentTime }));
+
+    audio.onended = () => {
+      setPlayingIdx(null);
+      setProgress(p => ({ ...p, [i]: 0 }));
+    };
+
+    audio.play().catch(() => setPlayingIdx(null));
+    setPlayingIdx(i);
+  };
 
   return (
     <section id="ecouter" className="section">
@@ -79,6 +104,7 @@ const Listen = () => {
               isPlaying={playingIdx === i}
               onToggle={() => toggle(i)}
               progress={progress[i] || 0}
+              duration={durations[i]}
             />
           ))}
         </div>
