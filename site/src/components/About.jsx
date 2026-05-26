@@ -5,21 +5,18 @@ const About = () => (
 
     <div className="about__story">
       <p>
-        Le groupe est né d'une frustration partagée&nbsp;: ne pas trouver
-        d'alter ego en chant. Chacun de nous portait des envies différentes —
-        l'un rêvait de polyphonies de la Renaissance, l'autre de classique sacré,
-        un autre encore de pop arrangée à quatre voix.
+        2×2 Voix est un quatuor vocal basé à Besançon.
+        Nous chantons un répertoire qui mêle polyphonies Renaissance,
+        musique classique et arrangements contemporains.
       </p>
       <p>
-        C'est tout naturellement que nous avons mis nos capacités au service
-        des envies de chacun. Nous formons aujourd'hui deux duos qui se
-        répondent&nbsp;: voix de femmes, voix d'hommes — deux et deux,
-        autant que possible à parts égales.
+        Le groupe est né de l'envie simple de chanter ensemble des œuvres
+        que nous aimons, sans nous limiter à une époque ou à un style.
       </p>
       <p>
-        Notre répertoire traverse cinq siècles sans coutures&nbsp;: de Dufay
-        à Coldplay, en passant par Mozart et Brel. La même attention au
-        texte, à l'accord, au silence.
+        Nous aimons faire dialoguer les répertoires, passer de Monteverdi
+        à Brel ou de Dufay à Coldplay, toujours avec le même plaisir
+        des voix mêlées.
       </p>
     </div>
   </section>
