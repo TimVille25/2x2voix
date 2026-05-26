@@ -9,9 +9,9 @@ const Programme = () => {
         <div className="section__label">Programme</div>
         <h2 className="section__title">Cinq siècles,<br />trois familles.</h2>
         <p className="section__lede">
-          Notre répertoire se déploie sur trois grandes familles que nous
-          aimons faire dialoguer au sein d'un même programme — chacune avec
-          sa lumière propre.
+          Nos concerts prennent des formes différentes selon les lieux et
+          les occasions : polyphonies Renaissance, musique classique ou
+          harmonies contemporaines.
         </p>
 
         <div className="famcards">
