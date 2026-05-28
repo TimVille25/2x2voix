@@ -67,10 +67,6 @@ export const TRACKS = [
 ];
 
 export const GALLERY = [
-  { label: "Répétition · mai",   layout: "wide" },
-  { label: "Église de Chariez", layout: "tall" },
-  { label: "Studio",             layout: "" },
-  { label: "Concert d'hiver",    layout: "" },
-  { label: "Backstage",          layout: "" },
-  { label: "Manuscrits",         layout: "wide" },
+  { label: "Église de Thise",           layout: "wide", file: "Visuel-eglise-sans-texte.jpg" },
+  { label: "Répétition dans le jardin", layout: "wide", file: "Jardin.jpg" },
 ];
