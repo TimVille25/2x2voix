@@ -1,30 +1,33 @@
 import { useState } from 'react';
-import Icon from './Icon.jsx';
+import Icon from '../../atoms/Icon';
+import './style.css';
 
-const EMPTY = { name: '', email: '', subject: 'concert', message: '' };
+const FORM_ENDPOINT = 'https://formspree.io/f/mpqnblrl';
+const EMPTY_FORM = { name: '', email: '', subject: 'concert', message: '' };
 
 const Contact = () => {
-  const [form, setForm] = useState(EMPTY);
+  const [form, setForm] = useState(EMPTY_FORM);
   const [sent, setSent] = useState(false);
   const [sentName, setSentName] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
+
+  const setField = (key, value) => setForm((f) => ({ ...f, [key]: value }));
 
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(false);
     try {
-      const res = await fetch('https://formspree.io/f/mpqnblrl', {
+      const res = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
+        headers: { Accept: 'application/json' },
         body: new FormData(e.target),
       });
       if (res.ok) {
         setSentName(form.name.split(' ')[0] || '');
         setSent(true);
-        setForm(EMPTY);
+        setForm(EMPTY_FORM);
       } else {
         setError(true);
       }
@@ -78,7 +81,7 @@ const Contact = () => {
                   <label className="field__label" htmlFor="f-name">Votre nom</label>
                   <input
                     id="f-name" name="name" className="field__input" type="text"
-                    value={form.name} onChange={e => set('name', e.target.value)}
+                    value={form.name} onChange={(e) => setField('name', e.target.value)}
                     placeholder="Prénom Nom" required
                   />
                 </div>
@@ -86,7 +89,7 @@ const Contact = () => {
                   <label className="field__label" htmlFor="f-email">Email</label>
                   <input
                     id="f-email" name="email" className="field__input" type="email"
-                    value={form.email} onChange={e => set('email', e.target.value)}
+                    value={form.email} onChange={(e) => setField('email', e.target.value)}
                     placeholder="vous@example.fr" required
                   />
                 </div>
@@ -95,7 +98,7 @@ const Contact = () => {
                 <label className="field__label" htmlFor="f-subject">Objet</label>
                 <select
                   id="f-subject" name="subject" className="field__select"
-                  value={form.subject} onChange={e => set('subject', e.target.value)}
+                  value={form.subject} onChange={(e) => setField('subject', e.target.value)}
                 >
                   <option value="Concert">Réservation d'un concert</option>
                   <option value="Mariage">Mariage / cérémonie</option>
@@ -108,7 +111,7 @@ const Contact = () => {
                 <label className="field__label" htmlFor="f-msg">Votre message</label>
                 <textarea
                   id="f-msg" name="message" className="field__textarea"
-                  value={form.message} onChange={e => set('message', e.target.value)}
+                  value={form.message} onChange={(e) => setField('message', e.target.value)}
                   placeholder="Date, lieu, contexte, nombre de personnes attendues…"
                   required
                 />

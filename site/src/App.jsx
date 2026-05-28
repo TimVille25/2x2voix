@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import Nav from './components/Nav.jsx';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Agenda from './components/Agenda.jsx';
-import Programmes from './components/Programmes.jsx';
-import Listen from './components/Listen.jsx';
-import Gallery from './components/Gallery.jsx';
-import Contact from './components/Contact.jsx';
-import Footer from './components/Footer.jsx';
+import Nav from './components/organisms/Nav';
+import Hero from './components/organisms/Hero';
+import About from './components/organisms/About';
+import Agenda from './components/organisms/Agenda';
+import Programmes from './components/organisms/Programmes';
+import Listen from './components/organisms/Listen';
+import Gallery from './components/organisms/Gallery';
+import Contact from './components/organisms/Contact';
+import Footer from './components/organisms/Footer';
 
 const App = () => {
   useEffect(() => {

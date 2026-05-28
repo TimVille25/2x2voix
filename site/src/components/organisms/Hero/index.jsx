@@ -1,5 +1,6 @@
-import logo from '../assets/2x2voix-logo-black-transparent-bg-no-text.png';
-import Icon from './Icon.jsx';
+import logo from '../../../assets/2x2voix-logo-black-transparent-bg-no-text.png';
+import Icon from '../../atoms/Icon';
+import './style.css';
 
 const Hero = () => (
   <section id="hero" className="hero">

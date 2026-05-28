@@ -1,0 +1,78 @@
+.about__story {
+  margin-top: 24px;
+  max-width: 64ch;
+}
+.about__story p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text-primary);
+  margin-bottom: 18px;
+  text-wrap: pretty;
+}
+
+/* Membres — styles pour une future implémentation des cartes de membres */
+.duos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.duo {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+}
+.duo:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.duo__label {
+  padding: 10px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-bg-active) 50%, transparent);
+}
+.duo__members { padding: 18px 16px; display: flex; flex-direction: column; gap: 14px; }
+.member { display: flex; align-items: center; gap: 14px; }
+.member__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-active);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+.member__avatar--svg {
+  padding: 0;
+  background: linear-gradient(135deg, var(--color-bg-active), var(--color-bg-default));
+  position: relative;
+  overflow: hidden;
+}
+.member__info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.member__name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.005em;
+}
+.member__voice {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .duos { grid-template-columns: 1fr; }
+}

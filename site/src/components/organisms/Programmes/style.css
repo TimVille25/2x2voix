@@ -1,0 +1,175 @@
+.rep__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+.famcards { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
+.famcard-row { display: flex; align-items: center; gap: 32px; }
+
+.prog-deco {
+  flex: 0 0 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prog-deco--arch {
+  align-self: stretch;
+  color: rgba(90, 74, 46, 0.60);
+}
+.prog-deco--arch svg { display: block; width: 100%; height: 100%; max-height: 300px; }
+.prog-deco--arch svg,
+.prog-deco--arch svg g { color: inherit; }
+.prog-deco--piano { color: color-mix(in srgb, var(--color-primary) 30%, transparent); }
+.prog-deco--vinyl { color: color-mix(in srgb, var(--color-accent) 35%, transparent); }
+.prog-deco__svg { display: block; width: 100%; height: auto; }
+
+.famcard {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  transition: all 250ms ease-out;
+  cursor: default;
+  outline: none;
+  flex: 1;
+}
+.famcard:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+.famcard.is-active {
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.famcard::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms ease-out;
+}
+.famcard.is-active::before { transform: scaleX(1); }
+.famcard__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.famcard__roman {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  opacity: 0.85;
+}
+.famcard__period {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+.famcard__title {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  margin: 4px 0 -2px;
+}
+.famcard__teaser {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--color-primary);
+  opacity: 0.78;
+  letter-spacing: 0.005em;
+  margin-bottom: 4px;
+}
+.famcard__desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+  flex: 1;
+}
+.famcard__composers { display: flex; flex-wrap: wrap; gap: 6px; }
+.famcard__composer {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-active);
+  color: var(--color-primary-dark);
+  border: 1px solid transparent;
+  transition: all var(--transition-default);
+}
+.famcard.is-active .famcard__composer {
+  background: color-mix(in srgb, var(--color-bg-active) 55%, var(--color-surface));
+  border-color: var(--color-border);
+}
+.famcard__signature {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--color-border);
+  margin-top: 4px;
+}
+.famcard__signature-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+.famcard__signature-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.005em;
+}
+.famcard__signature-by { font-size: 13px; color: var(--color-text-secondary); font-style: italic; }
+.famcard__wip {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  background: var(--color-bg-active);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.famcard--renaissance::before { background: #5A4A2E; }
+.famcard--renaissance .famcard__roman { color: #5A4A2E; }
+.famcard--classique::before { background: var(--color-primary); }
+.famcard--classique .famcard__roman { color: var(--color-primary); }
+.famcard--pop::before { background: var(--color-accent); }
+.famcard--pop .famcard__roman { color: var(--color-accent); }
+
+@media (max-width: 960px) {
+  .prog-deco    { display: none; }
+  .famcard-row  { display: block; }
+  .rep__inner   { padding: 64px 24px; }
+}
+
+@media (max-width: 600px) {
+  .rep__inner { padding: 48px 20px; }
+}

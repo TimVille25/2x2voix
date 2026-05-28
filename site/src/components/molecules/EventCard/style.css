@@ -1,0 +1,103 @@
+.event {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  transition: all var(--transition-default);
+}
+.event:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+}
+.event__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-active);
+}
+.event__date-day {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.event__date-month {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--color-accent);
+  margin-top: 8px;
+}
+.event__date-year {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+.event__info { display: flex; flex-direction: column; gap: 6px; }
+.event__title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.event__meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+.event__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.event__meta-item svg { color: var(--color-text-muted); flex-shrink: 0; }
+.event__note {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+.event__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .event { grid-template-columns: 100px 1fr; gap: 20px; padding: 20px; }
+  .event__actions { grid-column: 1 / -1; flex-direction: row; }
+}
+
+@media (max-width: 600px) {
+  .event { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .event__date {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .event__date-day   { font-size: 36px; }
+  .event__date-month { margin-top: 0; }
+  .event__date-year  { margin-top: 0; }
+  .event__actions    { grid-column: unset; flex-direction: row; flex-wrap: wrap; }
+}

@@ -1,3 +1,5 @@
+import './style.css';
+
 const About = () => (
   <section id="quatuor" className="section bg-alt">
     <div className="section__inner">
@@ -5,7 +7,7 @@ const About = () => (
       <div className="section__title">Un quatuor vocal de Franche-Comté.</div>
 
       <div className="about__story">
-        <p className="ignore-style">
+        <p>
           2×2 Voix est un quatuor vocal basé à Besançon.
         </p>
         <p>

@@ -1,9 +1,10 @@
-import Icon from './Icon.jsx';
+import Icon from '../../atoms/Icon';
+import './style.css';
 
 const Footer = () => (
   <footer className="footer">
     <div className="footer__brand">
-      2<span style={{ color: 'var(--color-accent)', fontStyle: 'italic' }}>×</span>2 Voix
+      2<span className="footer__brand-times">×</span>2 Voix
     </div>
     <div className="footer__social">
       <a
