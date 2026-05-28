@@ -27,7 +27,7 @@ const Contact = () => {
             ou un mariage&nbsp;: dites-nous où, quand, et nous reviendrons vers vous.
           </p>
           <div className="contact__details">
-            <div className="contact__detail"><Icon name="mail" size={16} /> contact@2x2voix.fr</div>
+            <div className="contact__detail"><Icon name="mail" size={16} /> 2x2voix@gmail.com</div>
             <div className="contact__detail"><Icon name="phone" size={16} /> +33 X XX XX XX XX</div>
             <div className="contact__detail"><Icon name="map-pin" size={16} /> Basés en Bourgogne–Franche-Comté</div>
             <div className="contact__detail">
