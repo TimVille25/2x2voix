@@ -13,7 +13,7 @@ export const REPERTOIRE = [
     roman: "I",
     teaser: "Polyphonies a cappella",
     description:
-      "Le programme renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
+      "Le programme renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
     composers: [ "Josquin des Prez", "Clément Janequin", "Roland de Lassus", "Pierre Certon", "John Bennet"],
     signature: "Mille regretz",
     signatureComposer: "Josquin des Prez",
@@ -42,19 +42,19 @@ export const EVENTS = [
     title: "Quatuor vocal en introduction à « Over the Pop »",
     venue: "Salle des fêtes, Rennes-sur-Loue",
     address: "Rennes-sur-Loue, 25440",
-    note: "Quatre voix en ouverture d'une soirée pop — un avant-goût classique et Renaissance avant la fête.",
+    note: "Quatre voix en ouverture d'une soirée pop — un avant-goût classique et renaissance avant la fête.",
     price: "Entrée libre",
   },
   {
-    id: "charriez-2026-09-20",
+    id: "chariez-2026-09-20",
     date: "2026-09-20",
     time: "15:00",
     duration: 90,
     day: 20, month: "Septembre", year: 2026,
-    title: "Polyphonies Renaissance — Visite du village médiéval de Charriez",
-    venue: "Village médiéval, Charriez",
-    address: "Charriez, 70360",
-    note: "Polyphonies de la Renaissance déambulatoires à travers les rues anciennes — un dialogue entre la pierre et la voix.",
+    title: "Polyphonies renaissance — Visite du village médiéval de Chariez",
+    venue: "Village médiéval, Chariez",
+    address: "Chariez, 70360",
+    note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes — un dialogue entre la pierre et la voix.",
     price: "Gratuit, dans le cadre des Journées du Patrimoine",
   },
 ];
@@ -68,7 +68,7 @@ export const TRACKS = [
 
 export const GALLERY = [
   { label: "Répétition · mai",   layout: "wide" },
-  { label: "Église de Charriez", layout: "tall" },
+  { label: "Église de Chariez", layout: "tall" },
   { label: "Studio",             layout: "" },
   { label: "Concert d'hiver",    layout: "" },
   { label: "Backstage",          layout: "" },

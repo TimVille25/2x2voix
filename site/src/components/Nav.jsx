@@ -52,7 +52,7 @@ const Nav = () => {
       <header className="nav">
         <div className="nav__inner">
           <a href="#hero" className="nav__brand" aria-label="2x2 Voix" onClick={closeMenu}>
-            2<span className="x">×</span>2 Voix
+            <img src="/2x2voix/src/assets/2x2voix-logo-black-transparent-bg-no-text.png" alt="2x2 Voix" className="nav__brand-logo" />
           </a>
 
           {/* Liens desktop */}

@@ -9,7 +9,7 @@ const About = () => (
           2×2 Voix est un quatuor vocal basé à Besançon.
         </p>
         <p>
-          Nous proposons plusieurs programmes autour des polyphonies Renaissance,
+          Nous proposons plusieurs programmes autour des polyphonies renaissance,
           de la musique classique et des harmonies contemporaines, en nous adaptant
           aux lieux et aux événements.
         </p>

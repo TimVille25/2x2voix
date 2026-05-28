@@ -1,21 +1,18 @@
+import logo from '../assets/2x2voix-logo-black-transparent-bg-no-text.png';
 import Icon from './Icon.jsx';
 
 const Hero = () => (
   <section id="hero" className="hero">
     <div className="hero__grid">
-      <h1 className="hero__formula" aria-label="2x2 Voix — Quatuor vocal à Besançon">
-        <span className="hero__formula-row">
-          <span className="digit">2</span>
-          <span className="times">×</span>
-          <span className="digit digit--accent">2</span>
-        </span>
-        <span className="hero__formula-voix">Voix</span>
-      </h1>
+      <div className="hero__identity">
+        <img src={logo} alt="" className="hero__logo" />
+        <h1 className="hero__title-main">2x2 voix</h1>
+      </div>
       <div className="hero__copy">
         <p className="hero__sub">
           <strong className="hero__sub-location">Quatuor vocal à Besançon</strong>
           <br />
-          Polyphonies Renaissance, classique et harmonies contemporaines.
+          Polyphonies renaissance, classique et harmonies contemporaines.
           <br />
           Entre héritage vocal et résonances d'aujourd'hui.
         </p>

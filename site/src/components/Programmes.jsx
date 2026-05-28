@@ -47,7 +47,7 @@ const Programmes = () => {
         <div className="section__title">Cinq siècles,<br />deux familles.</div>
         <p className="section__lede">
           Nos concerts prennent des formes différentes selon les lieux et
-          les occasions : polyphonies Renaissance ou musique classique sacrée et profane.
+          les occasions : polyphonies renaissance ou musique classique sacrée et profane.
         </p>
 
         <div className="famcards">
