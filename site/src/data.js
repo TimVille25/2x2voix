@@ -13,7 +13,7 @@ export const REPERTOIRE = [
     roman: "I",
     teaser: "Polyphonies a cappella",
     description:
-      "Le programme renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la renaissance et la musique vocale ancienne à quatre voix, dans des programmes pensés pour les lieux chargés d'histoire&nbsp;: églises, cloîtres, chapelles ou salles voûtées.<br><br>Quatre lignes vocales qui s'entrecroisent, se répondent et construisent un équilibre vivant porté par l'acoustique des pierres et des voix.",
+      "Le programme renaissance est au cœur de 2x2 Voix.<br>Nous y explorons les polyphonies de la Renaissance et la musique vocale ancienne à quatre voix, à travers un répertoire adapté aussi bien aux concerts qu'aux fêtes médiévales, événements historiques et moments conviviaux.<br><br>Nous interprétons des œuvres de compositeurs de la Renaissance comme Josquin des Prez, Clément Janequin, Roland de Lassus, en mettant en valeur le chant polyphonique et le répertoire vocal ancien à quatre voix.",
     composers: [ "Josquin des Prez", "Clément Janequin", "Roland de Lassus", "Pierre Certon", "John Bennet"],
     signature: "Mille regretz",
     signatureComposer: "Josquin des Prez",
@@ -25,7 +25,7 @@ export const REPERTOIRE = [
     roman: "II",
     teaser: "Sacré & profane",
     description:
-      "Notre quatuor vocal interprète un répertoire de musique classique et de chant choral contemporain mêlant émotion, finesse harmonique et richesse sonore.<br>À travers des œuvres sacrées et profanes, nous faisons dialoguer les grandes pages du répertoire classique avec des compositions modernes aux textures vocales enveloppantes.<br><br>Notre programme met notamment à l'honneur des compositeurs contemporains majeurs comme Ola Gjeilo ou Eric Whitacre, reconnus pour leur écriture chorale immersive et cinématographique.<br><br>Entre musique classique, harmonies contemporaines et chant a cappella, ce programme propose une expérience vocale sensible et accessible, idéale pour concerts, églises, festivals, cérémonies et événements culturels.",
+      "Ce programme met en avant différentes écritures pour les voix, depuis les œuvres classiques de Anton Bruckner ou Gabriel Fauré jusqu'aux compositions contemporaines de Ola Gjeilo ou Eric Whitacre. Il permet de découvrir différentes couleurs du chant choral, entre répertoire classique et musique contemporaine pour quatuor vocal.",
     composers: ["Gabriel Fauré", "Ola Gjeilo", "Anton Bruckner", "Eric Whitacre"],
     signature: "Cantique de Jean Racine",
     signatureComposer: "Fauré (arr.)",
