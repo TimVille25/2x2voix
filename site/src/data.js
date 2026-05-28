@@ -25,8 +25,8 @@ export const REPERTOIRE = [
     roman: "II",
     teaser: "Sacré & profane",
     description:
-      "Notre programme classique explore la musique vocale du baroque au romantisme, dans des arrangements pour quatuor vocal mêlant musique sacrée et profane.<br><br>Motets, mélodies et œuvres chorales y trouvent une forme plus intime à quatre voix, portée par l'équilibre des accords et la clarté des textes.<br><br>L'Ave verum côtoie la chanson d'amour, le motet répond au lied, dans des programmes adaptés aussi bien aux églises qu'aux salles de concert.",
-    composers: ["Gabriel Fauré", "Ola Gjeilo", "Anton Bruckner"],
+      "Notre quatuor vocal interprète un répertoire de musique classique et de chant choral contemporain mêlant émotion, finesse harmonique et richesse sonore.<br>À travers des œuvres sacrées et profanes, nous faisons dialoguer les grandes pages du répertoire classique avec des compositions modernes aux textures vocales enveloppantes.<br><br>Notre programme met notamment à l'honneur des compositeurs contemporains majeurs comme Ola Gjeilo ou Eric Whitacre, reconnus pour leur écriture chorale immersive et cinématographique.<br><br>Entre musique classique, harmonies contemporaines et chant a cappella, ce programme propose une expérience vocale sensible et accessible, idéale pour concerts, églises, festivals, cérémonies et événements culturels.",
+    composers: ["Gabriel Fauré", "Ola Gjeilo", "Anton Bruckner", "Eric Whitacre"],
     signature: "Cantique de Jean Racine",
     signatureComposer: "Fauré (arr.)",
   },
