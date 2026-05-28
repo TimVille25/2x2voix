@@ -25,7 +25,7 @@ const Footer = () => (
         <Icon name="youtube" size={16} stroke={1.5} />
       </a>
     </div>
-    <div>Quatuor vocal · contact@2x2voix.fr · © {new Date().getFullYear()}</div>
+    <div>Quatuor vocal · 2x2voix@gmail.com · © 2026</div>
   </footer>
 );
 
