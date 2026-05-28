@@ -1028,6 +1028,12 @@ img { display: block; max-width: 100%; }
 }
 .form__success svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent); }
 
+.form__error {
+  font-size: 13px;
+  color: #f4a07a;
+  margin: 0;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
