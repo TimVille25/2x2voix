@@ -42,7 +42,7 @@ export const EVENTS = [
     title: "Quatuor vocal en introduction à « Over the Pop »",
     venue: "Salle des fêtes, Rennes-sur-Loue",
     address: "Rennes-sur-Loue, 25440",
-    note: "Quatre voix en ouverture d'une soirée pop — un avant-goût classique et renaissance avant la fête.",
+    note: "Quatre voix en ouverture d'une soirée pop.",
     price: "Entrée libre",
   },
   {
@@ -54,7 +54,7 @@ export const EVENTS = [
     title: "Polyphonies renaissance — Visite du village médiéval de Chariez",
     venue: "Village médiéval, Chariez",
     address: "Chariez, 70360",
-    note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes — un dialogue entre la pierre et la voix.",
+    note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes.",
     price: "Gratuit, dans le cadre des Journées du Patrimoine",
   },
 ];
