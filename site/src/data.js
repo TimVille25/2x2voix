@@ -20,7 +20,7 @@ export const REPERTOIRE = [
   },
   {
     id: "classique",
-    label: "Classique",
+    label: "Classique & contemporain",
     period: "XVIIe — XXe siècle",
     roman: "II",
     teaser: "Sacré & profane",
