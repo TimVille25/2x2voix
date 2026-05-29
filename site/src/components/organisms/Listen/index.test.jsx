@@ -2,6 +2,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import Listen from '.';
 
+vi.mock('../../../data.js', () => ({
+  TRACKS: [
+    { title: 'Piste test A', sub: 'Compositeur A', duration: 120, file: 'test-a.mp3' },
+    { title: 'Piste test B', sub: 'Compositeur B', duration: 90,  file: 'test-b.mp3' },
+  ],
+}));
+
 const mockAudio = {
   play: vi.fn(() => Promise.resolve()),
   pause: vi.fn(),
@@ -26,8 +33,8 @@ describe('Listen', () => {
 
   it('affiche toutes les pistes', () => {
     render(<Listen />);
-    expect(screen.getByText('Nothern lights')).toBeInTheDocument();
-    expect(screen.getByText('Cantique de Jean Racine')).toBeInTheDocument();
+    expect(screen.getByText('Piste test A')).toBeInTheDocument();
+    expect(screen.getByText('Piste test B')).toBeInTheDocument();
   });
 
   it('affiche les boutons de lecture pour chaque piste', () => {
