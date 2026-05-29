@@ -40,9 +40,9 @@ export const EVENTS = [
     duration: 60, // minutes
     day: 4, month: "Juillet", year: 2026,
     title: "Quatuor vocal en introduction à « Over the Pop »",
-    venue: "Salle des fêtes, Rennes-sur-Loue",
+    venue: "Festival Rennes en Voix, Rennes-sur-Loue",
     address: "Rennes-sur-Loue, 25440",
-    note: "Quatre voix en ouverture d'une soirée pop.",
+    note: "Quatre voix en ouverture du concert de Over the Pop",
     price: "Entrée libre",
   },
   {
