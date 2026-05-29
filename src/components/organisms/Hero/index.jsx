@@ -6,7 +6,7 @@ const Hero = () => (
   <section id="hero" className="hero">
     <div className="hero__grid">
       <div className="hero__identity">
-        <img src={logo} alt="" className="hero__logo" />
+        <img src={logo} alt="" aria-hidden="true" className="hero__logo" />
         <h1 className="hero__title-main">2x2 voix</h1>
       </div>
       <div className="hero__copy">

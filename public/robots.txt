@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://2x2voix.fr/sitemap.xml
