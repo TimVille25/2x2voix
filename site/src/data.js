@@ -60,10 +60,10 @@ export const EVENTS = [
 ];
 
 export const TRACKS = [
-  { title: "Nothern lights",          sub: "Ola Gjeilo",        duration: 254, file: "northern-lights.mp3" },
-  { title: "Cantique de Jean Racine", sub: "Gabriel Fauré",     duration: 210, file: "cantique-de-jean-racine.mp3" },
-  { title: "Mille regretz",           sub: "Josquin des Prez",  duration: 107, file: "mille-regretz.mp3" },
-  { title: "Weep O mine eyes",        sub: "John Bennet",       duration: 188, file: "weep-o-mine-eyes.mp3" },
+  { title: "Nothern lights • Extrait",          sub: "Ola Gjeilo",        duration: 254, file: "northern-lights-extrait.mp3" },
+  // { title: "Cantique de Jean Racine", sub: "Gabriel Fauré",     duration: 210, file: "cantique-de-jean-racine.mp3" },
+  { title: "Mille regretz • Extrait",           sub: "Josquin des Prez",  duration: 107, file: "mille-regretz-extrait.mp3" },
+  // { title: "Weep O mine eyes",        sub: "John Bennet",       duration: 188, file: "weep-o-mine-eyes.mp3" },
 ];
 
 export const GALLERY = [
