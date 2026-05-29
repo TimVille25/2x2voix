@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/2x2voix/',
+  base: '/',
   test: {
     environment: 'jsdom',
     globals: true,
