@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import Nav from './components/organisms/Nav';
 import Hero from './components/organisms/Hero';
 import About from './components/organisms/About';
@@ -11,10 +11,6 @@ const Contact = lazy(() => import('./components/organisms/Contact'));
 const Footer = lazy(() => import('./components/organisms/Footer'));
 
 const App = () => {
-  useEffect(() => {
-    document.documentElement.dataset.typo = 'modern';
-  }, []);
-
   return (
     <div className="site">
       <Nav />
