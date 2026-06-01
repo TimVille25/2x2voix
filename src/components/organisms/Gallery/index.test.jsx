@@ -1,8 +1,8 @@
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import Gallery from '.';
 
-vi.mock('../../../assets/Jardin.webp', () => ({ default: 'jardin-thumb.webp' }));
-vi.mock('../../../assets/Visuel-eglise-sans-texte.webp', () => ({ default: 'eglise-thumb.webp' }));
+vi.mock('../../../assets/Jardin-thumb.webp', () => ({ default: 'jardin-thumb.webp' }));
+vi.mock('../../../assets/Visuel-eglise-sans-texte-thumb.webp', () => ({ default: 'eglise-thumb.webp' }));
 vi.mock('../../../assets/Jardin.jpg', () => ({ default: 'jardin-full.jpg' }));
 vi.mock('../../../assets/Visuel-eglise-sans-texte.jpg', () => ({ default: 'eglise-full.jpg' }));
 

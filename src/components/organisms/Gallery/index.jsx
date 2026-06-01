@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { GALLERY } from '../../../data.js';
-import jardinThumb from '../../../assets/Jardin.webp';
-import egliseThumb from '../../../assets/Visuel-eglise-sans-texte.webp';
+import jardinThumb from '../../../assets/Jardin-thumb.webp';
+import egliseThumb from '../../../assets/Visuel-eglise-sans-texte-thumb.webp';
 import jardinFull from '../../../assets/Jardin.jpg';
 import eglisFull from '../../../assets/Visuel-eglise-sans-texte.jpg';
 import GalleryItem from '../../molecules/GalleryItem';
