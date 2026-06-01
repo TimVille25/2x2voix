@@ -29,3 +29,10 @@
   align-items: center;
 }
 .footer__social-link:hover { color: rgba(255,255,255,0.9); }
+.footer__description {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: rgba(255,255,255,0.38);
+  font-size: 10px;
+  line-height: 1.6;
+}

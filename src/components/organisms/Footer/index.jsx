@@ -27,6 +27,9 @@ const Footer = () => (
       </a>
     </div>
     <div>Quatuor vocal · 2x2voix@gmail.com · © 2026</div>
+    <p className="footer__description">
+      2x2 Voix est un quatuor vocal basé à Besançon, en Bourgogne-Franche-Comté. Nous proposons des concerts et animations musicales autour du chant polyphonique, de la musique Renaissance, du répertoire classique et de créations plus contemporaines. Notre ensemble intervient lors de concerts, festivals, événements culturels, cérémonies, mariages et manifestations patrimoniales dans le Doubs, le Jura, la Haute-Saône et l'ensemble de la région. Nous défendons une pratique du chant a cappella et de la musique vocale de chambre, accessible à tous les publics.
+    </p>
   </footer>
 );
 
