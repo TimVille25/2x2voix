@@ -39,10 +39,10 @@ export const EVENTS = [
     time: "19:00",
     duration: 60, // minutes
     day: 4, month: "Juillet", year: 2026,
-    title: "Quatuor vocal en introduction à « Over the Pop »",
+    title: "Première partie du Festival Rennes en Voix",
     venue: "Festival Rennes en Voix, Rennes-sur-Loue",
     address: "Rennes-sur-Loue, 25440",
-    note: "Quatre voix en ouverture du concert de Over the Pop",
+    note: "Une introduction à notre univers musical, avec un programme de polyphonies de la Renaissance pour quatuor vocal.",
     price: "Entrée libre",
   },
   {
