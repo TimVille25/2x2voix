@@ -1,4 +1,3 @@
-import logo from '../../../assets/2x2voix-logo-black-transparent-bg-no-text.png';
 import Icon from '../../atoms/Icon';
 import './style.css';
 
@@ -6,7 +5,7 @@ const Hero = () => (
   <section id="hero" className="hero">
     <div className="hero__grid">
       <div className="hero__identity">
-        <img src={logo} alt="" aria-hidden="true" className="hero__logo" />
+        <img src="/logo.webp" alt="" aria-hidden="true" className="hero__logo" fetchpriority="high" />
         <h1 className="hero__title-main">2x2 voix</h1>
       </div>
       <div className="hero__copy">

@@ -1,18 +1,30 @@
 import { useState } from 'react';
 import { GALLERY } from '../../../data.js';
-import jardinImg from '../../../assets/Jardin.jpg';
-import egliseImg from '../../../assets/Visuel-eglise-sans-texte.jpg';
+import jardinThumb from '../../../assets/Jardin.webp';
+import egliseThumb from '../../../assets/Visuel-eglise-sans-texte.webp';
+import jardinFull from '../../../assets/Jardin.jpg';
+import eglisFull from '../../../assets/Visuel-eglise-sans-texte.jpg';
 import GalleryItem from '../../molecules/GalleryItem';
 import Lightbox from '../../molecules/Lightbox';
 import './style.css';
 
-const IMAGE_MAP = {
-  'Jardin.jpg': jardinImg,
-  'Visuel-eglise-sans-texte.jpg': egliseImg,
+const THUMB_MAP = {
+  'Jardin.jpg': jardinThumb,
+  'Visuel-eglise-sans-texte.jpg': egliseThumb,
+};
+
+const FULL_MAP = {
+  'Jardin.jpg': jardinFull,
+  'Visuel-eglise-sans-texte.jpg': eglisFull,
 };
 
 const PHOTOS = GALLERY
-  .map((g, i) => ({ ...g, gridIdx: i, src: g.file ? IMAGE_MAP[g.file] ?? null : null }))
+  .map((g, i) => ({
+    ...g,
+    gridIdx: i,
+    src: g.file ? THUMB_MAP[g.file] ?? null : null,
+    fullSrc: g.file ? FULL_MAP[g.file] ?? null : null,
+  }))
   .filter((g) => g.src !== null);
 
 const Gallery = () => {
@@ -29,7 +41,7 @@ const Gallery = () => {
         </p>
         <div className="gallery">
           {GALLERY.map((g, i) => {
-            const src = g.file ? IMAGE_MAP[g.file] ?? null : null;
+            const src = g.file ? THUMB_MAP[g.file] ?? null : null;
             const photoIdx = src ? PHOTOS.findIndex((p) => p.gridIdx === i) : -1;
             return (
               <GalleryItem
@@ -46,7 +58,7 @@ const Gallery = () => {
 
       {lightboxIdx !== null && (
         <Lightbox
-          src={PHOTOS[lightboxIdx].src}
+          src={PHOTOS[lightboxIdx].fullSrc}
           label={PHOTOS[lightboxIdx].label}
           index={lightboxIdx}
           total={PHOTOS.length}

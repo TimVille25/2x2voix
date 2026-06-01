@@ -24,7 +24,7 @@ const GalleryItem = ({ item, idx, src, onOpen }) => {
       onClick={src && onOpen ? onOpen : undefined}
     >
       {src
-        ? <img src={src} alt={item.label} className="gallery__img" />
+        ? <img src={src} alt={item.label} className="gallery__img" loading="lazy" decoding="async" />
         : <div className="gallery__placeholder">photo · {String(idx + 1).padStart(2, '0')}</div>
       }
       <div className="gallery__caption">{item.label}</div>

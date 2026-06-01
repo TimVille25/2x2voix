@@ -97,54 +97,6 @@ html[data-theme="mono"] {
 html[data-typo="modern"] {
   --font-heading: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
 }
-html[data-typo="display"] {
-  --font-heading: 'Playfair Display', 'New York', Georgia, serif;
-}
-html[data-typo="hybrid"] {
-  --font-heading: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
-}
-html[data-typo="hybrid"] .hero__title,
-html[data-typo="hybrid"] .section__title,
-html[data-typo="hybrid"] .famcard__title,
-html[data-typo="hybrid"] .event__title,
-html[data-typo="hybrid"] .contact__title {
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-html[data-typo="hybrid"] .hero__formula,
-html[data-typo="hybrid"] .nav__brand,
-html[data-typo="hybrid"] .footer__brand {
-  font-family: 'Cinzel', 'Trajan Pro', serif;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-html[data-typo="hybrid"] .hero__formula .times {
-  font-style: italic;
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
-}
-html[data-typo="hybrid"] .section__label,
-html[data-typo="hybrid"] .hero__eyebrow,
-html[data-typo="hybrid"] .voicemark__voice,
-html[data-typo="hybrid"] .contact__label,
-html[data-typo="hybrid"] .field__label,
-html[data-typo="hybrid"] .pcard__voice,
-html[data-typo="hybrid"] .pcard__range-label,
-html[data-typo="hybrid"] .famcard__signature-label,
-html[data-typo="hybrid"] .nav__link,
-html[data-typo="hybrid"] .gallery__placeholder {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 600;
-}
-html[data-typo="hybrid"] .famcard__period,
-html[data-typo="hybrid"] .voicemark__range,
-html[data-typo="hybrid"] .pcard__range-value,
-html[data-typo="hybrid"] .event__date-year {
-  font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
-  font-weight: 500;
-}
 
 @media (prefers-reduced-motion: reduce) {
   :root {

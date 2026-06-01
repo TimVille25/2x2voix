@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import Nav from './components/organisms/Nav';
 import Hero from './components/organisms/Hero';
 import About from './components/organisms/About';
-import Agenda from './components/organisms/Agenda';
-import Programmes from './components/organisms/Programmes';
-import Listen from './components/organisms/Listen';
-import Gallery from './components/organisms/Gallery';
-import Contact from './components/organisms/Contact';
-import Footer from './components/organisms/Footer';
+
+const Agenda = lazy(() => import('./components/organisms/Agenda'));
+const Programmes = lazy(() => import('./components/organisms/Programmes'));
+const Listen = lazy(() => import('./components/organisms/Listen'));
+const Gallery = lazy(() => import('./components/organisms/Gallery'));
+const Contact = lazy(() => import('./components/organisms/Contact'));
+const Footer = lazy(() => import('./components/organisms/Footer'));
 
 const App = () => {
   useEffect(() => {
@@ -20,13 +21,17 @@ const App = () => {
       <main>
         <Hero />
         <About />
-        <Agenda />
-        <Programmes />
-        <Listen />
-        <Gallery />
-        <Contact />
+        <Suspense fallback={null}>
+          <Agenda />
+          <Programmes />
+          <Listen />
+          <Gallery />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
