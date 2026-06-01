@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import Footer from '.';
 
 describe('Footer', () => {
   it('affiche le nom du groupe', () => {
     render(<Footer />);
-    expect(screen.getByText(/2.*2 Voix/)).toBeInTheDocument();
+    const brand = document.querySelector('.footer__brand');
+    expect(within(brand).getByText(/2.*2 Voix/)).toBeInTheDocument();
   });
 
   it('affiche l\'email de contact', () => {
