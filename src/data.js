@@ -36,7 +36,7 @@ export const EVENTS = [
   {
     id: "rennes-2026-07-04",
     date: "2026-07-04",
-    time: "20:30",
+    time: "19:00",
     duration: 60, // minutes
     day: 4, month: "Juillet", year: 2026,
     title: "Quatuor vocal en introduction à « Over the Pop »",
