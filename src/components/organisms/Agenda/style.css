@@ -4,3 +4,32 @@
   gap: 16px;
   margin-top: 32px;
 }
+
+.agenda-archive {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+.agenda-archive__toggle {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  list-style: none;
+}
+.agenda-archive__toggle::-webkit-details-marker {
+  display: none;
+}
+.agenda-archive__toggle::before {
+  content: '+';
+  display: inline-block;
+  width: 1em;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.agenda-archive[open] .agenda-archive__toggle::before {
+  content: '−';
+}
+.agenda-archive .agenda {
+  margin-top: 24px;
+}

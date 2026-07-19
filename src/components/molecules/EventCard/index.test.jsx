@@ -51,4 +51,14 @@ describe('EventCard', () => {
     fireEvent.click(screen.getByRole('button', { name: /Ajouter à mon agenda/i }));
     expect(URL.createObjectURL).toHaveBeenCalled();
   });
+
+  it('affiche un badge "Passé" pour un concert archivé', () => {
+    render(<EventCard event={mockEvent} past />);
+    expect(screen.getByText('Passé')).toBeInTheDocument();
+  });
+
+  it('n\'affiche pas le bouton d\'ajout à l\'agenda pour un concert passé', () => {
+    render(<EventCard event={mockEvent} past />);
+    expect(screen.queryByRole('button', { name: /Ajouter à mon agenda/i })).not.toBeInTheDocument();
+  });
 });
