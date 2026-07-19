@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { isPastEvent, splitEventsByDate } from './events.js';
 
-const makeEvent = (id, date, time = '19:00', duration = 60) => ({
-  id, date, time, duration,
+const makeEvent = (id, date, times = ['19:00'], duration = 60) => ({
+  id, date, times, duration,
 });
 
 describe('isPastEvent', () => {
@@ -17,8 +17,14 @@ describe('isPastEvent', () => {
   });
 
   it('retourne false pendant que l\'événement est en cours', () => {
-    const event = makeEvent('en-cours', '2026-07-19', '19:00', 90);
+    const event = makeEvent('en-cours', '2026-07-19', ['19:00'], 90);
     expect(isPastEvent(event, new Date('2026-07-19T19:30:00'))).toBe(false);
+  });
+
+  it('se base sur le dernier créneau pour un événement à plusieurs horaires', () => {
+    const event = makeEvent('multi-horaires', '2026-07-19', ['11:00', '17:00'], 60);
+    expect(isPastEvent(event, new Date('2026-07-19T12:00:00'))).toBe(false);
+    expect(isPastEvent(event, new Date('2026-07-19T18:30:00'))).toBe(true);
   });
 });
 

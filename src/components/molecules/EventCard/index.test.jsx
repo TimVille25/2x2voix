@@ -5,7 +5,7 @@ import EventCard from '.';
 const mockEvent = {
   id: 'test-2026-07-04',
   date: '2026-07-04',
-  time: '20:30',
+  times: ['20:30'],
   duration: 60,
   day: 4,
   month: 'Juillet',
@@ -33,6 +33,17 @@ describe('EventCard', () => {
     expect(screen.getByText(/Salle de concert/)).toBeInTheDocument();
     expect(screen.getByText(/20:30/)).toBeInTheDocument();
     expect(screen.getByText(/Entrée libre/)).toBeInTheDocument();
+  });
+
+  it('affiche l\'adresse complète du lieu sur plusieurs lignes', () => {
+    render(<EventCard event={mockEvent} />);
+    expect(screen.getByText('Paris')).toBeInTheDocument();
+    expect(screen.getByText('75001')).toBeInTheDocument();
+  });
+
+  it('affiche plusieurs créneaux horaires quand le concert a lieu plusieurs fois dans la journée', () => {
+    render(<EventCard event={{ ...mockEvent, times: ['11:00', '17:00'] }} />);
+    expect(screen.getByText('11:00 · 17:00')).toBeInTheDocument();
   });
 
   it('affiche la note de l\'événement', () => {

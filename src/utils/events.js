@@ -1,5 +1,6 @@
 export const isPastEvent = (event, now = new Date()) => {
-  const end = new Date(`${event.date}T${event.time}`);
+  const lastTime = event.times[event.times.length - 1];
+  const end = new Date(`${event.date}T${lastTime}`);
   end.setMinutes(end.getMinutes() + event.duration);
   return end < now;
 };

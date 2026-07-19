@@ -10,8 +10,8 @@ Si les informations ne sont pas fournies dans `$ARGUMENTS`, demande-les une par 
 
 - **Titre** — titre du concert ou de l'événement
 - **Date** — format `YYYY-MM-DD`
-- **Heure de début** — format `HH:MM` (24h)
-- **Durée** — en minutes (par défaut : 60)
+- **Heure(s) de début** — format `HH:MM` (24h). Si le concert a lieu plusieurs fois dans la journée, demande la liste des horaires (ex. `11:00, 17:00`)
+- **Durée** — en minutes, par créneau (par défaut : 60)
 - **Lieu** — nom du lieu / festival
 - **Adresse** — ville et code postal
 - **Note** — courte description du programme ou du contexte
@@ -63,7 +63,7 @@ Format de l'objet :
 {
   id: "slug-lieu-YYYY-MM-DD",
   date: "YYYY-MM-DD",
-  time: "HH:MM",
+  times: ["HH:MM"],
   duration: 60,
   day: D, month: "Mois", year: YYYY,
   title: "...",
@@ -73,6 +73,8 @@ Format de l'objet :
   price: "...",
 },
 ```
+
+`times` contient un horaire par représentation dans la journée, ex. `times: ["11:00", "17:00"]` pour un concert donné deux fois.
 
 **4. Insère dans `src/data.js`**
 
