@@ -43,7 +43,7 @@ export const EVENTS = [
     venue: "Festival Rennes en Voix, Rennes-sur-Loue",
     address: "Rennes-sur-Loue, 25440",
     note: "Une introduction à notre univers musical, avec un programme de polyphonies de la Renaissance pour quatuor vocal.",
-    price: "Entrée libre",
+    price: "Entrée libre, participation libre au chapeau",
   },
   {
     id: "chapelle-sainte-reine-2026-08-23",
@@ -55,7 +55,7 @@ export const EVENTS = [
     venue: "Chapelle Sainte-Reine",
     address: "22 route de Ray - Queutrey, 70130 Vellexon-Queutrey-et-Vaudey",
     note: "Un concert a cappella dans la chapelle gothique Sainte-Reine. De la Renaissance à la musique contemporaine : Josquin des Prez, Palestrina, Victoria, Byrd, Gjeilo, Arbeau.",
-    price: "Entrée libre. Places limitées à l'espace disponible.",
+    price: "Entrée libre, participation libre au chapeau. Places limitées à l'espace disponible.",
   },
   {
     id: "chariez-2026-09-20",
@@ -67,7 +67,7 @@ export const EVENTS = [
     venue: "Village médiéval",
     address: "Chariez, 70360",
     note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes.",
-    price: "Gratuit, dans le cadre des Journées du Patrimoine",
+    price: "Entrée libre, participation libre au chapeau",
   },
 ];
 
