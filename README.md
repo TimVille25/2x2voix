@@ -1,22 +1,36 @@
-# CODING AGENTS: READ THIS FIRST
+# 2x2 Voix
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Site vitrine du quatuor vocal **2x2 Voix**, basé à Besançon. Le quatuor interprète des polyphonies a cappella allant de la Renaissance (Josquin des Prez, Roland de Lassus...) au répertoire classique et contemporain (Fauré, Whitacre, Gjeilo...).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Le site présente le quatuor, ses deux programmes de répertoire, l'agenda des concerts, une galerie photo, des extraits audio et un formulaire de contact.
 
-## What you should do — IMPORTANT
+Pour l'architecture du code (stack, structure des dossiers, composition des pages), voir [ARCHITECTURE.md](./ARCHITECTURE.md). Pour les conventions de code, voir [CLAUDE.md](./CLAUDE.md).
 
-**Read `2x2-voix/project/2x2 Voix.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Prérequis
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+- [Node.js](https://nodejs.org/) 18+
+- npm
 
-## About the design files
+## Installation
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+```bash
+npm install
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Lancer le projet en local
 
-## Bundle contents
+```bash
+npm run dev
+```
 
-- `2x2-voix/README.md` — this file
-- `2x2-voix/project/` — the `2x2 Voix` project files (HTML prototypes, assets, components)
+Le site est alors accessible sur [http://localhost:5173](http://localhost:5173).
+
+## Autres commandes
+
+```bash
+npm run build           # build de production dans dist/
+npm run preview         # prévisualiser le build de production
+npm test                # lancer les tests une fois
+npm run test:watch      # lancer les tests en mode watch
+npm run optimize:images # optimiser les images de src/assets
+```
