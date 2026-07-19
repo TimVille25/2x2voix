@@ -1,22 +1,37 @@
 import { useState } from 'react';
 import { GALLERY } from '../../../data.js';
-import jardinThumb from '../../../assets/Jardin-thumb.webp';
-import egliseThumb from '../../../assets/Visuel-eglise-sans-texte-thumb.webp';
-import jardinFull from '../../../assets/Jardin.jpg';
-import eglisFull from '../../../assets/Visuel-eglise-sans-texte.jpg';
 import GalleryItem from '../../molecules/GalleryItem';
 import Lightbox from '../../molecules/Lightbox';
 import './style.css';
 
-const THUMB_MAP = {
-  'Jardin.jpg': jardinThumb,
-  'Visuel-eglise-sans-texte.jpg': egliseThumb,
-};
+// Auto-discovers every photo dropped in assets/gallery/: no import or map
+// entry needed per file, only the GALLERY entry in data.js.
+const fullModules = import.meta.glob('../../../assets/gallery/*.{jpg,jpeg,png}', {
+  eager: true,
+  import: 'default',
+});
+const thumbModules = import.meta.glob('../../../assets/gallery/*-thumb.webp', {
+  eager: true,
+  import: 'default',
+});
 
-const FULL_MAP = {
-  'Jardin.jpg': jardinFull,
-  'Visuel-eglise-sans-texte.jpg': eglisFull,
-};
+const filename = (path) => path.split('/').pop();
+const stripExt = (name) => name.replace(/\.[^.]+$/, '');
+
+const FULL_MAP = Object.fromEntries(
+  Object.entries(fullModules).map(([path, mod]) => [filename(path), mod])
+);
+
+const THUMB_MAP = Object.fromEntries(
+  Object.keys(FULL_MAP)
+    .map((file) => {
+      const thumbPath = Object.keys(thumbModules).find(
+        (path) => filename(path) === `${stripExt(file)}-thumb.webp`
+      );
+      return thumbPath ? [file, thumbModules[thumbPath]] : null;
+    })
+    .filter(Boolean)
+);
 
 const PHOTOS = GALLERY
   .map((g, i) => ({

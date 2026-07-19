@@ -1,24 +1,26 @@
 import sharp from 'sharp';
-import { resolve, dirname } from 'path';
+import { resolve, dirname, basename, extname } from 'path';
 import { fileURLToPath } from 'url';
+import { readdir, rename } from 'fs/promises';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
-const assets = resolve(root, 'src/assets');
+const gallery = resolve(root, 'src/assets/gallery');
 const pub = resolve(root, 'public');
 
+// Gallery items display at ~440px max (wide) / ~220px (standard); 800px covers 2× retina
+const GALLERY_THUMB_WIDTH = 800;
+
+const galleryPhotos = (await readdir(gallery)).filter(
+  (file) => /\.(jpe?g|png)$/i.test(file),
+);
+
 const tasks = [
-  // Gallery thumbnails: wide items display at ~440px max, 800px covers 2× retina
-  {
-    input: resolve(assets, 'Jardin.jpg'),
-    output: resolve(assets, 'Jardin-thumb.webp'),
-    width: 800,
-  },
-  {
-    input: resolve(assets, 'Visuel-eglise-sans-texte.jpg'),
-    output: resolve(assets, 'Visuel-eglise-sans-texte-thumb.webp'),
-    width: 800,
-  },
+  ...galleryPhotos.map((file) => ({
+    input: resolve(gallery, file),
+    output: resolve(gallery, `${basename(file, extname(file))}-thumb.webp`),
+    width: GALLERY_THUMB_WIDTH,
+  })),
   // Logo: displays at max 260px (clamp), 520px covers 2× retina
   {
     input: resolve(pub, 'logo.webp'),
@@ -34,8 +36,7 @@ for (const { input, output, width } of tasks) {
     .toFile(output + '.tmp');
 
   // sharp can't overwrite input; rename tmp → target
-  const fs = await import('fs/promises');
-  await fs.rename(output + '.tmp', output);
+  await rename(output + '.tmp', output);
 
   console.log(`${output.replace(root, '.')}  →  ${info.width}×${info.height}  ${(info.size / 1024).toFixed(0)}KB`);
 }

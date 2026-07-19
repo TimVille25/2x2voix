@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import Gallery from '.';
 
-vi.mock('../../../assets/Jardin-thumb.webp', () => ({ default: 'jardin-thumb.webp' }));
-vi.mock('../../../assets/Visuel-eglise-sans-texte-thumb.webp', () => ({ default: 'eglise-thumb.webp' }));
-vi.mock('../../../assets/Jardin.jpg', () => ({ default: 'jardin-full.jpg' }));
-vi.mock('../../../assets/Visuel-eglise-sans-texte.jpg', () => ({ default: 'eglise-full.jpg' }));
+vi.mock('../../../assets/gallery/Jardin-thumb.webp', () => ({ default: 'jardin-thumb.webp' }));
+vi.mock('../../../assets/gallery/Visuel-eglise-sans-texte-thumb.webp', () => ({ default: 'eglise-thumb.webp' }));
+vi.mock('../../../assets/gallery/Jardin.jpg', () => ({ default: 'jardin-full.jpg' }));
+vi.mock('../../../assets/gallery/Visuel-eglise-sans-texte.jpg', () => ({ default: 'eglise-full.jpg' }));
 
 describe('Gallery', () => {
   it('affiche le titre de la section', () => {
