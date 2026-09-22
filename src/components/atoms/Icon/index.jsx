@@ -47,6 +47,13 @@ const Icon = ({ name, size = 16, stroke = 1.6 }) => {
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
       );
+    case 'external-link':
+      return (
+        <svg {...common}>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <path d="M15 3h6v6M10 14L21 3" />
+        </svg>
+      );
     case 'download':
       return (
         <svg {...common}>

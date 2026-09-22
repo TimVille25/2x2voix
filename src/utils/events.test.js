@@ -1,8 +1,36 @@
 import { describe, it, expect } from 'vitest';
-import { isPastEvent, splitEventsByDate } from './events.js';
+import { isPastEvent, splitEventsByDate, hasKnownStartTime, getEventSchedule } from './events.js';
 
 const makeEvent = (id, date, times = ['19:00'], duration = 60) => ({
   id, date, times, duration,
+});
+
+describe('hasKnownStartTime', () => {
+  it('retourne true pour un horaire au format HH:MM', () => {
+    expect(hasKnownStartTime(makeEvent('t', '2026-07-04', ['19:00']))).toBe(true);
+  });
+
+  it('retourne false pour un horaire non encore défini', () => {
+    expect(hasKnownStartTime(makeEvent('t', '2026-07-04', ['Bientôt disponible']))).toBe(false);
+  });
+});
+
+describe('getEventSchedule', () => {
+  it('calcule la date de début et de fin à partir de la durée', () => {
+    const event = makeEvent('test', '2026-07-04', ['20:30'], 60);
+    expect(getEventSchedule(event)).toEqual({
+      startDate: '2026-07-04T20:30:00',
+      endDate: '2026-07-04T21:30:00',
+    });
+  });
+
+  it('n\'expose pas de date de fin quand l\'horaire n\'est pas encore défini', () => {
+    const event = makeEvent('test', '2026-11-28', ['Bientôt disponible'], 50);
+    expect(getEventSchedule(event)).toEqual({
+      startDate: '2026-11-28',
+      endDate: null,
+    });
+  });
 });
 
 describe('isPastEvent', () => {

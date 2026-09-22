@@ -44,6 +44,10 @@ export const EVENTS = [
     address: "Rennes-sur-Loue, 25440",
     note: "Une introduction à notre univers musical, avec un programme de polyphonies de la Renaissance pour quatuor vocal.",
     price: "Entrée libre, participation libre au chapeau",
+    description: "",
+    links: [
+      { label: "Festival Rennes en Voix", url: "https://www.macommune.info/agenda/festival-rennes-en-voix-5/" },
+    ],
   },
   {
     id: "chapelle-sainte-reine-2026-08-23",
@@ -56,6 +60,8 @@ export const EVENTS = [
     address: "22 route de Ray - Queutrey, 70130 Vellexon-Queutrey-et-Vaudey",
     note: "Un concert a cappella dans la chapelle gothique Sainte-Reine. De la Renaissance à la musique contemporaine : Josquin des Prez, Palestrina, Victoria, Byrd, Gjeilo, Arbeau.",
     price: "Entrée libre, participation libre au chapeau. Places limitées à l'espace disponible.",
+    description: "",
+    links: [],
   },
   {
     id: "chariez-2026-09-20",
@@ -68,6 +74,11 @@ export const EVENTS = [
     address: "Chariez, 70360",
     note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes.",
     price: "Entrée libre, participation libre au chapeau",
+    description: "Intermedes polyphoniques de la Renaissance dans le cadre du village médiéval de Chariez, à l'occasion des Journées du patrimoine. Nous y avons interprété un repertoire sacré dans l'église et un repertoire profane dans une maison médiévale en cours de restauration.",
+    links: [
+      { label: "Journées du patrimoine", url: "https://journeesdupatrimoine.culture.gouv.fr/w/391796/evenement/20282718/visite-de-la-maison-medievale#/events/20282718" },
+      { label: "Une maison médiévale", url: "https://unemaisonmedievale.blogspot.com/2026/09/samedi-et-dimanche-chariez-journees.html" },
+    ],
   },
   {
     id: "thise-2026-11-28",
@@ -80,6 +91,8 @@ export const EVENTS = [
     address: "Rue de Beaupré, 25220 Roche-lès-Beaupré, France",
     note: "Polyphonies de la Renaissance a cappella dans le cadre remarquable du Prieuré de Beaupré, ancien domaine historique du XIII",
     price: "Entrée libre, participation libre au chapeau",
+    description: "",
+    links: [],
   }
 ];
 

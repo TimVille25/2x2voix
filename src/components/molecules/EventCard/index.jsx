@@ -1,26 +1,18 @@
+import { Link } from 'react-router-dom';
 import Icon from '../../atoms/Icon';
 import { downloadICS } from '../../../utils/ics';
+import { getEventSchedule, hasKnownStartTime } from '../../../utils/events';
 import './style.css';
 
-const TIME_REGEX = /^([01]\d|2[0-3]):[0-5]\d$/;
 const SITE_URL = 'https://2x2voix.fr/';
-
-const addMinutes = (date, time, minutes) => {
-  const [Y, M, D] = date.split('-').map(Number);
-  const [h, mi] = time.split(':').map(Number);
-  const d = new Date(Y, M - 1, D, h, mi + minutes);
-  const pad = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:00`;
-};
 
 /**
  * @param {boolean} past - masque l'action d'ajout à l'agenda pour un événement déjà passé.
  */
 const EventCard = ({ event, past = false }) => {
   const addressLines = event.address.split(',').map((line) => line.trim());
-  const hasStartTime = TIME_REGEX.test(event.times[0]);
-  const startDate = hasStartTime ? `${event.date}T${event.times[0]}:00` : event.date;
-  const endDate = hasStartTime ? addMinutes(event.date, event.times[0], event.duration) : null;
+  const { startDate, endDate } = getEventSchedule(event);
+  const eventUrl = `${SITE_URL}concerts/${event.id}`;
 
   return (
     <article
@@ -34,7 +26,7 @@ const EventCard = ({ event, past = false }) => {
       <meta itemProp="eventAttendanceMode" content="https://schema.org/OfflineEventAttendanceMode" />
       <meta itemProp="eventStatus" content="https://schema.org/EventScheduled" />
       <meta itemProp="image" content={`${SITE_URL}og-image.jpg`} />
-      <meta itemProp="url" content={`${SITE_URL}#concerts`} />
+      <meta itemProp="url" content={eventUrl} />
       <div hidden itemProp="performer" itemScope itemType="https://schema.org/MusicGroup">
         <meta itemProp="name" content="2×2 Voix" />
         <meta itemProp="url" content={SITE_URL} />
@@ -48,7 +40,7 @@ const EventCard = ({ event, past = false }) => {
       </div>
       <div className="event__info">
         <h3 className="event__title">
-          {event.title}
+          <Link to={`/concerts/${event.id}`} className="event__title-link">{event.title}</Link>
           {past && <span className="event__badge">Passé</span>}
         </h3>
         <div className="event__location-row">
@@ -74,7 +66,7 @@ const EventCard = ({ event, past = false }) => {
         </div>
         <p className="event__note" itemProp="description">{event.note}</p>
       </div>
-      {!past && (
+      {!past && hasKnownStartTime(event) && (
         <div className="event__actions">
           <button className="btn btn--secondary btn--sm" onClick={() => downloadICS(event)}>
             <Icon name="download" size={14} /> Ajouter à mon agenda

@@ -1,6 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { render as renderRTL, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { vi, afterEach } from 'vitest';
 import Agenda from '.';
+
+const render = (ui) => renderRTL(ui, { wrapper: MemoryRouter });
 
 beforeEach(() => {
   global.URL.createObjectURL = vi.fn(() => 'blob:mock');

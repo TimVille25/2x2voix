@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import logo from '../../../assets/2x2voix-logo-black-transparent-bg-no-text.png';
 import Icon from '../../atoms/Icon';
 import './style.css';
@@ -35,6 +36,9 @@ function useScrollSpy(ids) {
 }
 
 const Nav = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const hrefFor = (id) => (isHome ? `#${id}` : `/#${id}`);
   const allIds = ['hero', ...NAV_LINKS.map((l) => l.id), 'contact'];
   const active = useScrollSpy(allIds);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,7 +60,7 @@ const Nav = () => {
     <>
       <header className="nav">
         <div className="nav__inner">
-          <a href="#hero" className="nav__brand" aria-label="2x2 Voix" onClick={closeMenu}>
+          <a href={isHome ? '#hero' : '/'} className="nav__brand" aria-label="2x2 Voix" onClick={closeMenu}>
             <img src={logo} alt="2x2 Voix" className="nav__brand-logo" />
           </a>
 
@@ -64,7 +68,7 @@ const Nav = () => {
             {NAV_LINKS.map((l) => (
               <a
                 key={l.id}
-                href={`#${l.id}`}
+                href={hrefFor(l.id)}
                 className={`nav__link ${active === l.id ? 'is-active' : ''}`}
               >
                 {l.label}
@@ -81,7 +85,7 @@ const Nav = () => {
             </a>
           </div>
 
-          <a href="#contact" className="nav__cta nav__cta--desktop">Nous contacter</a>
+          <a href={hrefFor('contact')} className="nav__cta nav__cta--desktop">Nous contacter</a>
 
           <button
             className={`nav__hamburger${menuOpen ? ' is-open' : ''}`}
@@ -107,7 +111,7 @@ const Nav = () => {
             {NAV_LINKS.map((l, i) => (
               <a
                 key={l.id}
-                href={`#${l.id}`}
+                href={hrefFor(l.id)}
                 className={`nav__mobile-link${active === l.id ? ' is-active' : ''}`}
                 style={{ transitionDelay: menuOpen ? `${i * 40}ms` : '0ms' }}
                 onClick={closeMenu}
@@ -126,7 +130,7 @@ const Nav = () => {
                 <Icon name="youtube" size={20} stroke={1.5} />
               </a>
             </div>
-            <a href="#contact" className="nav__mobile-cta" onClick={closeMenu}>
+            <a href={hrefFor('contact')} className="nav__mobile-cta" onClick={closeMenu}>
               Nous contacter
             </a>
           </div>

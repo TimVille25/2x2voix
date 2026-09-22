@@ -1,35 +1,17 @@
-import { lazy, Suspense } from 'react';
-import Nav from './components/organisms/Nav';
-import Hero from './components/organisms/Hero';
-import About from './components/organisms/About';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import ConcertPage from './pages/ConcertPage';
 
-const Agenda = lazy(() => import('./components/organisms/Agenda'));
-const Programmes = lazy(() => import('./components/organisms/Programmes'));
-const Listen = lazy(() => import('./components/organisms/Listen'));
-const Gallery = lazy(() => import('./components/organisms/Gallery'));
-const Contact = lazy(() => import('./components/organisms/Contact'));
-const Footer = lazy(() => import('./components/organisms/Footer'));
-
-const App = () => {
-  return (
+const App = () => (
+  <BrowserRouter>
     <div className="site">
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Suspense fallback={null}>
-          <Agenda />
-          <Programmes />
-          <Listen />
-          <Gallery />
-          <Contact />
-        </Suspense>
-      </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/concerts/:id" element={<ConcertPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
-  );
-};
+  </BrowserRouter>
+);
 
 export default App;
