@@ -72,4 +72,79 @@ describe('EventCard', () => {
     render(<EventCard event={mockEvent} past />);
     expect(screen.queryByRole('button', { name: /Ajouter à mon agenda/i })).not.toBeInTheDocument();
   });
+
+  describe('données structurées Schema.org', () => {
+    it('marque l\'article comme un MusicEvent', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      const article = container.querySelector('article');
+      expect(article).toHaveAttribute('itemscope');
+      expect(article).toHaveAttribute('itemtype', 'https://schema.org/MusicEvent');
+    });
+
+    it('renseigne le nom, la date de début et la date de fin calculée à partir de la durée', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      expect(container.querySelector('meta[itemprop="name"]')).toHaveAttribute('content', 'Concert test');
+      expect(container.querySelector('meta[itemprop="startDate"]')).toHaveAttribute('content', '2026-07-04T20:30:00');
+      expect(container.querySelector('meta[itemprop="endDate"]')).toHaveAttribute('content', '2026-07-04T21:30:00');
+    });
+
+    it('n\'expose pas de date de fin quand l\'horaire n\'est pas encore défini', () => {
+      const { container } = render(
+        <EventCard event={{ ...mockEvent, times: ['Bientôt disponible'] }} />
+      );
+      expect(container.querySelector('meta[itemprop="startDate"]')).toHaveAttribute('content', '2026-07-04');
+      expect(container.querySelector('meta[itemprop="endDate"]')).not.toBeInTheDocument();
+    });
+
+    it('renseigne le mode de participation et le statut de l\'événement', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      expect(container.querySelector('meta[itemprop="eventAttendanceMode"]')).toHaveAttribute(
+        'content',
+        'https://schema.org/OfflineEventAttendanceMode'
+      );
+      expect(container.querySelector('meta[itemprop="eventStatus"]')).toHaveAttribute(
+        'content',
+        'https://schema.org/EventScheduled'
+      );
+    });
+
+    it('renseigne l\'image et l\'url de l\'événement', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      expect(container.querySelector('meta[itemprop="image"]')).toHaveAttribute(
+        'content',
+        'https://2x2voix.fr/og-image.jpg'
+      );
+      expect(container.querySelector('meta[itemprop="url"]')).toHaveAttribute(
+        'content',
+        'https://2x2voix.fr/#concerts'
+      );
+    });
+
+    it('renseigne le groupe interprète 2×2 Voix', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      const performer = container.querySelector('[itemprop="performer"]');
+      expect(performer).toHaveAttribute('itemtype', 'https://schema.org/MusicGroup');
+      expect(performer.querySelector('meta[itemprop="name"]')).toHaveAttribute('content', '2×2 Voix');
+    });
+
+    it('renseigne le lieu (Place) avec son nom et son adresse complète', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      const location = container.querySelector('[itemprop="location"]');
+      expect(location).toHaveAttribute('itemtype', 'https://schema.org/Place');
+      expect(location.querySelector('[itemprop="name"]')).toHaveTextContent('Salle de concert');
+      expect(location.querySelector('meta[itemprop="address"]')).toHaveAttribute('content', 'Paris, 75001');
+    });
+
+    it('renseigne l\'offre (Offer) avec un prix libre en euros', () => {
+      const { container } = render(<EventCard event={mockEvent} />);
+      const offer = container.querySelector('[itemprop="offers"]');
+      expect(offer).toHaveAttribute('itemtype', 'https://schema.org/Offer');
+      expect(offer.querySelector('meta[itemprop="price"]')).toHaveAttribute('content', '0');
+      expect(offer.querySelector('meta[itemprop="priceCurrency"]')).toHaveAttribute('content', 'EUR');
+      expect(offer.querySelector('meta[itemprop="availability"]')).toHaveAttribute(
+        'content',
+        'https://schema.org/InStock'
+      );
+    });
+  });
 });
