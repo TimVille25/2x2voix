@@ -69,6 +69,18 @@ export const EVENTS = [
     note: "Polyphonies de la renaissance déambulatoires à travers les rues anciennes.",
     price: "Entrée libre, participation libre au chapeau",
   },
+  {
+    id: "thise-2026-11-28",
+    date: "2026-11-28",
+    times: ["Bientôt disponible"],
+    duration: 60,
+    day: 28, month: "Novembre", year: 2026,
+    title: "Polyphonies renaissance au prieuré de Beaupré",
+    venue: "Prieuré de Beaupré, Roche-lès-Beaupré",
+    address: "Rue de Beaupré, 25220 Roche-lès-Beaupré, France",
+    note: "Polyphonies de la renaissance dans le cadre du prieuré de Beaupré.",
+    price: "Entrée libre, participation libre au chapeau",
+  }
 ];
 
 export const TRACKS = [
