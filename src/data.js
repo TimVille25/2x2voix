@@ -34,7 +34,7 @@ export const REPERTOIRE = [
 
 export const EVENTS = [
   {
-    id: "rennes-2026-07-04",
+    id: "rennes-sur-loue-2026-07-04",
     date: "2026-07-04",
     times: ["19:00"],
     duration: 60, // minutes
@@ -81,7 +81,7 @@ export const EVENTS = [
     ],
   },
   {
-    id: "thise-2026-11-28",
+    id: "prieure-beaupre-2026-11-28",
     date: "2026-11-28",
     times: ["Bientôt disponible"],
     duration: 50,

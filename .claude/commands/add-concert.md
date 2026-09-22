@@ -71,10 +71,14 @@ Format de l'objet :
   address: "...",
   note: "...",
   price: "...",
+  description: "",
+  links: [],
 },
 ```
 
 `times` contient un horaire par représentation dans la journée, ex. `times: ["11:00", "17:00"]` pour un concert donné deux fois.
+
+`description` est un texte HTML optionnel plus détaillé que `note`, affiché sur la page dédiée du concert (`/concerts/<id>`). Laisse `""` si aucun contenu supplémentaire n'est fourni. `links` est une liste optionnelle de `{ label, url }` vers des pages externes (organisateur, article de presse…). Laisse `[]` si aucun lien n'est fourni.
 
 **4. Insère dans `src/data.js`**
 
@@ -82,6 +86,18 @@ Format de l'objet :
 - Insère le nouvel événement dans le tableau `EVENTS` **dans l'ordre chronologique** (par `date`)
 - Conserve la mise en forme existante (indentation, virgules)
 
-**5. Confirme**
+**5. Ajoute l'URL dans le sitemap**
+
+Chaque concert a sa propre page (`/concerts/<id>`). Ajoute une entrée dans `public/sitemap.xml` :
+
+```xml
+<url>
+  <loc>https://2x2voix.fr/concerts/<id></loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+```
+
+**6. Confirme**
 
 Affiche un résumé de ce qui a été ajouté : titre, date, lieu.

@@ -1,0 +1,8 @@
+.concert-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+.concert-meta-item svg { color: var(--color-text-muted); flex-shrink: 0; }

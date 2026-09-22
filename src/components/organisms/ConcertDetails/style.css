@@ -1,0 +1,99 @@
+.concert {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.concert__card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 140px 2px 1fr;
+  column-gap: 20px;
+  overflow: hidden;
+}
+.concert__card > * { min-width: 0; }
+
+.concert__perforation {
+  position: relative;
+  grid-column: 2;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-accent) 0 8px,
+    transparent 8px 16px
+  );
+}
+.concert__perforation::before,
+.concert__perforation::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-bg-default);
+  transform: translateX(-50%);
+}
+.concert__perforation::before { top: -54px; }
+.concert__perforation::after { bottom: -54px; }
+
+.concert__info { display: flex; flex-direction: column; gap: 14px; }
+.concert__title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.concert__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.concert__address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.concert__note {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.concert__description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.concert__description p { margin-bottom: 12px; }
+.concert__description p:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .concert__card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+  .concert__perforation {
+    grid-column: 1;
+    height: 2px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-accent) 0 8px,
+      transparent 8px 16px
+    );
+  }
+  .concert__perforation::before,
+  .concert__perforation::after { display: none; }
+}
