@@ -107,6 +107,8 @@ export const GALLERY = [
   { label: "Église de Thise",           layout: "wide", file: "Visuel-eglise-sans-texte.jpg" },
   { label: "Répétition dans le jardin", layout: "wide", file: "Jardin.jpg" },
   { label: "Rennes en voix",            layout: "wide", file: "rennes-en-voix-1.jpg" },
-  { label: "Rennes en voix",            layout: "tall", file: "rennes-en-voix-2.jpg" },
-  { label: "Rennes en voix", layout: "wide", file: "rennes-en-voix-3.jpg" },
+  { label: "Rennes en voix",            layout: "wide", file: "rennes-en-voix-2.jpg" },
+  { label: "Rennes en voix",            layout: "wide", file: "rennes-en-voix-3.jpg" },
+  { label: "Chariez",                   layout: "tall", file: "chariez-1.jpg" },
+  { label: "Chariez",                   layout: "wide", file: "chariez-2.jpg" },
 ];
