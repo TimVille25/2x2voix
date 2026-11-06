@@ -83,7 +83,7 @@ export const EVENTS = [
   {
     id: "prieure-beaupre-2026-11-28",
     date: "2026-11-28",
-    times: ["Bientôt disponible"],
+    times: ["18:00"],
     duration: 50,
     day: 28, month: "Novembre", year: 2026,
     title: "Polyphonies renaissance - 2x2 Voix au Prieuré de Beaupré",
