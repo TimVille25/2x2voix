@@ -6,9 +6,9 @@ import useConcertMeta from './useConcertMeta';
 import { EVENTS } from '../../data.js';
 import './style.css';
 
-const ConcertPage = () => {
+const ConcertPage = ({ events = EVENTS }) => {
   const { id } = useParams();
-  const event = EVENTS.find((e) => e.id === id);
+  const event = events.find((e) => e.id === id);
 
   useConcertMeta(event);
 
