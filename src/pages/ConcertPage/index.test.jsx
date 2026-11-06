@@ -1,10 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { vi } from 'vitest';
+import { downloadICS } from '../../utils/ics';
 import ConcertPage from '.';
 
 vi.mock('../../components/organisms/Nav', () => ({ default: () => <nav /> }));
 vi.mock('../../components/organisms/Footer', () => ({ default: () => <footer /> }));
+vi.mock('../../utils/ics', () => ({ downloadICS: vi.fn() }));
 
 const TEST_EVENTS = [
   {
@@ -52,8 +54,7 @@ const renderAt = (path) =>
   );
 
 beforeEach(() => {
-  global.URL.createObjectURL = vi.fn(() => 'blob:mock');
-  global.URL.revokeObjectURL = vi.fn();
+  vi.clearAllMocks();
 });
 
 describe('ConcertPage', () => {
@@ -77,11 +78,10 @@ describe('ConcertPage', () => {
   });
 
   it('déclenche le téléchargement ICS au clic sur le bouton', () => {
-    vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
     const event = TEST_EVENTS[0];
     renderAt(`/concerts/${event.id}`);
     fireEvent.click(screen.getByRole('button', { name: /Ajouter à mon agenda/i }));
-    expect(URL.createObjectURL).toHaveBeenCalled();
+    expect(downloadICS).toHaveBeenCalledWith(event);
   });
 
   it('n\'affiche pas le bouton d\'ajout à l\'agenda quand l\'horaire n\'est pas encore défini', () => {
